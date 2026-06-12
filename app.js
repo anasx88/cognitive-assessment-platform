@@ -221,6 +221,61 @@
       borderlineReviewAnswers
     };
   }
+
+  function calculatePerfectPatternIndex(questions, answers) {
+    const answeredRows = questions.map((question) => {
+      const selected = answers[question.id];
+      const selectedOption = question.options.find((option) => option.id === selected?.optionId);
+      const selectedScore = selectedOption ? selectedOption.score : null;
+
+      return {
+        questionId: question.id,
+        axis: question.axis,
+        questionType: question.questionType || "",
+        selectedScore
+      };
+    }).filter((row) => row.selectedScore !== null);
+
+    const totalAnswered = answeredRows.length;
+    const perfectAnswers = answeredRows.filter((row) => row.selectedScore === 3);
+
+    const impressionSensitiveRows = answeredRows.filter((row) =>
+      ["selfReport", "selfAssessment", "projection", "pressure"].includes(row.questionType)
+    );
+
+    const perfectImpressionSensitive = impressionSensitiveRows.filter((row) => row.selectedScore === 3);
+
+    const perfectAnswerRate = totalAnswered
+      ? Math.round((perfectAnswers.length / totalAnswered) * 100)
+      : 0;
+
+    const perfectImpressionSensitiveRate = impressionSensitiveRows.length
+      ? Math.round((perfectImpressionSensitive.length / impressionSensitiveRows.length) * 100)
+      : 0;
+
+    let level = "منخفض";
+    let reviewerNote = "نمط الإجابات لا يشير إلى مثالية مفرطة.";
+
+    if (perfectAnswerRate >= 95 && perfectImpressionSensitiveRate >= 90) {
+      level = "مرتفع";
+      reviewerNote = "احتمال وجود نمط إجابات مثالية أو انطباعية مرتفع. لا يعني ذلك عدم صدق النتيجة، لكنه يستحق مراجعة بشرية.";
+    } else if (perfectAnswerRate >= 85 && perfectImpressionSensitiveRate >= 80) {
+      level = "متوسط";
+      reviewerNote = "يوجد ميل ملحوظ نحو الإجابات المثالية، ويستحسن قراءة النتيجة مع مراجعة نمط الإجابات.";
+    }
+
+    return {
+      perfectPatternIndex: perfectAnswerRate,
+      perfectAnswerCount: perfectAnswers.length,
+      totalAnswered,
+      perfectImpressionSensitiveRate,
+      perfectImpressionSensitiveCount: perfectImpressionSensitive.length,
+      impressionSensitiveCount: impressionSensitiveRows.length,
+      level,
+      reviewerNote,
+      summaryText: `مؤشر النمط المثالي: ${perfectAnswerRate}% | أسئلة السلوك/الانطباع المثالية: ${perfectImpressionSensitiveRate}% | المستوى: ${level}`
+    };
+  }
   async function finishAssessment() {
     if (!isComplete()) {
       dom.missingNotice.hidden = false;
@@ -270,6 +325,13 @@
     payload.answerReviewSummaryText = answerReviewData.answerReviewSummary.summaryText;
     payload.triggeredRiskAnswersJson = JSON.stringify(answerReviewData.triggeredRiskAnswers);
     payload.borderlineReviewAnswersJson = JSON.stringify(answerReviewData.borderlineReviewAnswers);
+
+    const perfectPatternData = calculatePerfectPatternIndex(state.questions, state.answers);
+    payload.perfectPatternSummary = perfectPatternData;
+    payload.perfectPatternIndex = perfectPatternData.perfectPatternIndex;
+    payload.perfectPatternLevel = perfectPatternData.level;
+    payload.perfectPatternSummaryText = perfectPatternData.summaryText;
+    payload.perfectPatternReviewerNote = perfectPatternData.reviewerNote;
 
     state.finalPayload = payload;
     dom.reportContainer.innerHTML = root.Report.generateReportHtml(result);
@@ -398,6 +460,7 @@
 
   document.addEventListener("DOMContentLoaded", init);
 })(window);
+
 
 
 
