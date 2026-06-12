@@ -1574,7 +1574,7 @@ const QUESTION_BANK = [
     text: "ما العلامة التي تدل أنك تستخدم AI بدل التفكير لا لدعم التفكير؟",
     options: [
       { id: "A", text: "أطلب أمثلة.", score: 1 },
-      { id: "B", text: "أقبل بلا فهم.", score: 3 },
+      { id: "B", text: "أقبل المخرج.", score: 3 },
       { id: "C", text: "أطلب تبسيطًا.", score: 1 },
       { id: "D", text: "أطلب أسئلة.", score: 1 }
     ]
@@ -1638,9 +1638,9 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "شخص يغير مصدر التعلم كل يوم لأنه وجد شيئًا أفضل. ما تقييمك؟",
     options: [
-      { id: "A", text: "يحتاج معيارًا.", score: 3 },
+      { id: "A", text: "يضبط معيارًا.", score: 3 },
       { id: "B", text: "يطارد البدائل.", score: 1 },
-      { id: "C", text: "مرن جزئيًا.", score: 2 },
+      { id: "C", text: "يغيّر بمرونة.", score: 2 },
       { id: "D", text: "يخلط البحث.", score: 2 }
     ]
   },
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
