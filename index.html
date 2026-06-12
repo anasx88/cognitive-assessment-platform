@@ -1,122 +1,1059 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>منصة تقييم الجاهزية المعرفية والذكاء الاصطناعي</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منظومة بناء العقل التحليلي</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+  :root {
+    --ink: #0D1B2A;
+    --deep: #112240;
+    --mid: #1B3A5C;
+    --gold: #C9963A;
+    --gold-light: #E8B86D;
+    --cream: #F5F0E8;
+    --text: #E8EDF2;
+    --muted: #8899AA;
+    --border: rgba(201,150,58,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--ink);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(13,27,42,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(201,150,58,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .hero-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(201,150,58,0.12);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 500px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* ===== ORBITAL DIAGRAM ===== */
+  .orbital-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .orbital-svg {
+    width: 420px;
+    height: 420px;
+  }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 100px 48px; }
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .section-desc {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 560px;
+    margin-bottom: 60px;
+    line-height: 1.8;
+  }
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    margin: 20px 0 48px;
+    border-radius: 2px;
+  }
+
+  /* ===== PILLARS ===== */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .pillar-card {
+    background: var(--deep);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .pillar-card:hover::before { transform: scaleX(1); }
+  .pillar-card:hover {
+    border-color: var(--border);
+    transform: translateY(-4px);
+  }
+  .pillar-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .pillar-name {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .pillar-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ===== PHASES ===== */
+  .phases-section { background: var(--deep); }
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .phase-card {
+    background: var(--ink);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 36px 28px;
+    position: relative;
+  }
+  .phase-num {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(201,150,58,0.12);
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    line-height: 1;
+  }
+  .phase-label {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(201,150,58,0.1);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.72rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .phase-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .phase-duration {
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .phase-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .phase-list li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding-right: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .phase-list li::before {
+    content: '—';
+    position: absolute;
+    right: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ===== TESTS ===== */
+  .tests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .test-card {
+    background: var(--deep);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 28px;
+    transition: border-color 0.3s;
+  }
+  .test-card:hover { border-color: var(--border); }
+  .test-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .test-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .test-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    padding: 3px 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 100px;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* ===== LEVELS ===== */
+  .levels-section { background: var(--deep); }
+  .levels-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+  .levels-track::before {
+    content: '';
+    position: absolute;
+    right: 28px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .level-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    align-items: start;
+  }
+  .level-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(201,150,58,0.1);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--gold);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .level-name {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .level-focus {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .level-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .chip {
+    padding: 4px 12px;
+    background: rgba(201,150,58,0.08);
+    border: 1px solid rgba(201,150,58,0.2);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+  }
+
+  /* ===== WEEK EXAMPLE ===== */
+  .week-box {
+    background: var(--deep);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .week-badge {
+    padding: 8px 20px;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 0.85rem;
+    border-radius: 100px;
+  }
+  .week-topic {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .week-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .week-step {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .step-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .step-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ===== KPI ===== */
+  .kpi-section { background: var(--deep); }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .kpi-card {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .kpi-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
+  .kpi-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .kpi-method {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    text-align: center;
+    padding: 120px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,150,58,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .cta-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 48px;
+    line-height: 1.8;
+    position: relative;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 1rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    cursor: pointer;
+    border: none;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,150,58,0.35);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 40px 48px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .orbital-wrap { order: -1; }
+    .orbital-svg { width: 280px; height: 280px; }
+    section { padding: 70px 24px; }
+    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .phases-grid { grid-template-columns: 1fr; }
+    .tests-grid { grid-template-columns: 1fr; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .week-steps { grid-template-columns: 1fr; }
+    .hero-stats { gap: 24px; }
+    .cta-section { padding: 80px 24px; }
+  }
+</style>
 </head>
-<body data-screen="start">
-  <header class="site-header">
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">منظومة العقل التحليلي</div>
+  <ul class="nav-links">
+    <li><a href="#pillars">المحاور</a></li>
+    <li><a href="#phases">المراحل</a></li>
+    <li><a href="#tests">الاختبارات</a></li>
+    <li><a href="#levels">المستويات</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
     <div>
-      <p class="eyebrow">Cognitive & AI Readiness Assessment Platform</p>
-      <h1>منصة تقييم الجاهزية المعرفية والذكاء الاصطناعي</h1>
+      <div class="hero-tag">مبادرة تطوير · 2025</div>
+      <h1>بناء <span>العقل التحليلي</span> والمهارات الرقمية</h1>
+      <p class="hero-sub">
+        منظومة متكاملة تعمل على خمسة محاور متوازية لتحويل طريقة التفكير من عشوائية إلى منهجية — مع أدوات الذكاء الاصطناعي كشريك حقيقي في التحليل.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">24</span>
+          <span class="stat-label">أسبوعًا</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5</span>
+          <span class="stat-label">محاور متوازية</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">7</span>
+          <span class="stat-label">اختبارات تشخيصية</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">مستويات</span>
+        </div>
+      </div>
     </div>
-    <span class="header-mark">RTL</span>
-  </header>
+    <div class="orbital-wrap">
+      <svg class="orbital-svg" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
 
-  <main>
-    <section class="screen screen-start" aria-labelledby="startTitle">
-      <div class="intro">
-        <p class="eyebrow">تقييم تدريبي تنفيذي</p>
-        <h2 id="startTitle">ابدأ التقييم</h2>
-        <p>
-          سيظهر سؤال واحد في كل شاشة. لا يتم عرض محاور التقييم أثناء الإجابة، ويتم ترتيب الأسئلة والخيارات عشوائيا.
-        </p>
+        <!-- Orbit rings -->
+        <circle cx="210" cy="210" r="160" fill="none" stroke="rgba(201,150,58,0.08)" stroke-width="1.5" stroke-dasharray="4 6"/>
+        <circle cx="210" cy="210" r="115" fill="none" stroke="rgba(201,150,58,0.12)" stroke-width="1" stroke-dasharray="3 5"/>
+        <circle cx="210" cy="210" r="68" fill="none" stroke="rgba(201,150,58,0.15)" stroke-width="1"/>
+
+        <!-- Center core -->
+        <circle cx="210" cy="210" r="42" fill="rgba(201,150,58,0.07)" stroke="rgba(201,150,58,0.35)" stroke-width="1.5" filter="url(#glow)"/>
+        <circle cx="210" cy="210" r="28" fill="rgba(201,150,58,0.12)" stroke="rgba(201,150,58,0.5)" stroke-width="1"/>
+        <text x="210" y="205" text-anchor="middle" font-family="Tajawal" font-size="11" font-weight="800" fill="#C9963A">العقل</text>
+        <text x="210" y="220" text-anchor="middle" font-family="Tajawal" font-size="11" font-weight="800" fill="#C9963A">التحليلي</text>
+
+        <!-- Node 1: تفكير - top -->
+        <g>
+          <circle cx="210" cy="50" r="30" fill="rgba(17,34,64,0.95)" stroke="rgba(201,150,58,0.5)" stroke-width="1.5" filter="url(#glow)"/>
+          <text x="210" y="45" text-anchor="middle" font-family="Tajawal" font-size="13" font-weight="700" fill="#E8B86D">تفكير</text>
+          <text x="210" y="62" text-anchor="middle" font-family="Cairo" font-size="9" fill="rgba(255,255,255,0.4)">Thinking</text>
+        </g>
+
+        <!-- Node 2: تحليل - top-left -->
+        <g>
+          <circle cx="58" cy="120" r="30" fill="rgba(17,34,64,0.95)" stroke="rgba(201,150,58,0.4)" stroke-width="1.5"/>
+          <text x="58" y="115" text-anchor="middle" font-family="Tajawal" font-size="13" font-weight="700" fill="#E8B86D">تحليل</text>
+          <text x="58" y="132" text-anchor="middle" font-family="Cairo" font-size="9" fill="rgba(255,255,255,0.4)">Analysis</text>
+        </g>
+
+        <!-- Node 3: ذكاء اصطناعي - bottom-left -->
+        <g>
+          <circle cx="76" cy="310" r="30" fill="rgba(17,34,64,0.95)" stroke="rgba(201,150,58,0.4)" stroke-width="1.5"/>
+          <text x="76" y="305" text-anchor="middle" font-family="Tajawal" font-size="11" font-weight="700" fill="#E8B86D">ذكاء</text>
+          <text x="76" y="320" text-anchor="middle" font-family="Tajawal" font-size="11" font-weight="700" fill="#E8B86D">اصطناعي</text>
+        </g>
+
+        <!-- Node 4: كمبيوتر - bottom-right -->
+        <g>
+          <circle cx="344" cy="310" r="30" fill="rgba(17,34,64,0.95)" stroke="rgba(201,150,58,0.4)" stroke-width="1.5"/>
+          <text x="344" y="305" text-anchor="middle" font-family="Tajawal" font-size="12" font-weight="700" fill="#E8B86D">مهارات</text>
+          <text x="344" y="320" text-anchor="middle" font-family="Tajawal" font-size="12" font-weight="700" fill="#E8B86D">رقمية</text>
+        </g>
+
+        <!-- Node 5: تطوير الذات - top-right -->
+        <g>
+          <circle cx="362" cy="120" r="30" fill="rgba(17,34,64,0.95)" stroke="rgba(201,150,58,0.4)" stroke-width="1.5"/>
+          <text x="362" y="115" text-anchor="middle" font-family="Tajawal" font-size="11" font-weight="700" fill="#E8B86D">تطوير</text>
+          <text x="362" y="130" text-anchor="middle" font-family="Tajawal" font-size="11" font-weight="700" fill="#E8B86D">الذات</text>
+        </g>
+
+        <!-- Connector lines from center to nodes -->
+        <line x1="210" y1="168" x2="210" y2="80" stroke="rgba(201,150,58,0.2)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="172" y1="180" x2="88" y2="140" stroke="rgba(201,150,58,0.2)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="176" y1="238" x2="106" y2="290" stroke="rgba(201,150,58,0.2)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="244" y1="238" x2="314" y2="290" stroke="rgba(201,150,58,0.2)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="248" y1="180" x2="332" y2="140" stroke="rgba(201,150,58,0.2)" stroke-width="1" stroke-dasharray="3 4"/>
+
+        <!-- Animated dot on top orbit -->
+        <circle r="5" fill="var(--gold)" filter="url(#glow)" opacity="0.9">
+          <animateMotion dur="12s" repeatCount="indefinite">
+            <mpath href="#orbit-path"/>
+          </animateMotion>
+        </circle>
+        <path id="orbit-path" d="M 210 50 A 160 160 0 1 1 209.99 50" fill="none"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="section-inner">
+    <div class="fade-up">
+      <p class="section-eyebrow">المحاور الخمسة</p>
+      <h2 class="section-title">منظومة متوازية لا خطية</h2>
+      <p class="section-desc">كل أسبوع يأخذ المتعلم جرعة من المحاور الخمسة دفعة واحدة — لأن التفكير الحقيقي لا يعمل في صناديق منفصلة.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="pillars-grid fade-up">
+      <div class="pillar-card">
+        <span class="pillar-icon">🧠</span>
+        <div class="pillar-name">التفكير</div>
+        <div class="pillar-desc">تحسين طريقة الفهم والحكم — من التفكير النقدي إلى الاستراتيجي</div>
       </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">🔍</span>
+        <div class="pillar-name">التحليل</div>
+        <div class="pillar-desc">فهم المشاكل والأحداث — تحديد الأسباب الجذرية وتحليل المخاطر</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">💻</span>
+        <div class="pillar-name">المهارات الرقمية</div>
+        <div class="pillar-desc">أدوات التنفيذ والتسريع — Excel وPowerPoint والبيانات</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">⚙️</span>
+        <div class="pillar-name">تطوير الذات</div>
+        <div class="pillar-desc">الانضباط والتعلم والسلوك — لأن المعرفة بدون سلوك لا تنتج</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">🤖</span>
+        <div class="pillar-name">التعامل مع AI</div>
+        <div class="pillar-desc">استخدام الذكاء الاصطناعي بوعي — AI يضخّم العقل أو أخطاءه</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <aside id="resumePanel" class="notice resume-panel" hidden>
-        <p>يوجد تقدم محفوظ لهذا المتصفح: <strong></strong></p>
-        <div class="button-row">
-          <button type="button" id="resumeButton" class="secondary-button">استئناف</button>
-          <button type="button" id="discardResumeButton" class="ghost-button">بدء جديد</button>
-        </div>
-      </aside>
+<!-- PHASES -->
+<section id="phases" class="phases-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <p class="section-eyebrow">مسار التعلم</p>
+      <h2 class="section-title">ثلاث مراحل · 24 أسبوعًا</h2>
+      <p class="section-desc">مسار متدرج يأخذك من التشخيص إلى الإتقان الحقيقي — لا دورة سريعة، بل بناء حقيقي.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="phases-grid fade-up">
+      <div class="phase-card">
+        <div class="phase-num">01</div>
+        <div class="phase-label">المرحلة الأولى</div>
+        <div class="phase-title">التأسيس</div>
+        <div class="phase-duration">4 أسابيع</div>
+        <ul class="phase-list">
+          <li>تشخيص المستوى الفعلي</li>
+          <li>تصحيح المفاهيم الأساسية</li>
+          <li>بناء لغة مشتركة</li>
+          <li>تأسيس عادة التعلم</li>
+          <li>أساسيات AI والكمبيوتر</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">02</div>
+        <div class="phase-label">المرحلة الثانية</div>
+        <div class="phase-title">التطبيق</div>
+        <div class="phase-duration">8 أسابيع</div>
+        <ul class="phase-list">
+          <li>تحليل مشاكل حقيقية</li>
+          <li>استخدام AI في التحليل</li>
+          <li>بناء تقارير وعروض</li>
+          <li>Excel والجداول التحليلية</li>
+          <li>مقارنة الحلول والبدائل</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">03</div>
+        <div class="phase-label">المرحلة الثالثة</div>
+        <div class="phase-title">الإتقان</div>
+        <div class="phase-duration">12 أسبوعًا</div>
+        <ul class="phase-list">
+          <li>حالات واقعية معقدة</li>
+          <li>مشاريع تطبيقية كاملة</li>
+          <li>ربط البيانات بالقرار</li>
+          <li>بناء نماذج تفكير شخصية</li>
+          <li>استخدام AI كمساعد استراتيجي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <form id="startForm" class="form-panel">
-        <div class="field">
-          <label for="participantName">اسم المشارك</label>
-          <input id="participantName" name="participantName" type="text" autocomplete="name" required>
-        </div>
-
-        <div class="field">
-          <label for="batchCode">رمز المجموعة</label>
-          <input id="batchCode" name="batchCode" type="text" required>
-        </div>
-
-        <div class="field">
-          <label for="email">البريد الإلكتروني <span>اختياري</span></label>
-          <input id="email" name="email" type="email" autocomplete="email">
-        </div>
-
-        <div class="field">
-          <label for="testType">نوع الاختبار</label>
-          <select id="testType" name="testType">
-            <option value="screening">اختبار الفرز - 80 سؤالا</option>
-            <option value="diagnostic">الاختبار التشخيصي - 160 سؤالا</option>
-          </select>
-        </div>
-
-        <p id="formError" class="error-message" role="alert"></p>
-
-        <button type="submit" class="primary-button">بدء الاختبار</button>
-      </form>
-    </section>
-
-    <section class="screen screen-assessment" aria-labelledby="questionText">
-      <div class="assessment-shell">
-        <div class="assessment-top">
-          <div>
-            <p id="progressText">السؤال 1 من 80</p>
-            <strong id="answeredText">0 إجابة مكتملة</strong>
-          </div>
-          <button type="button" id="startOverButton" class="ghost-button">بدء من جديد</button>
-        </div>
-
-        <div class="progress-track" aria-hidden="true">
-          <div id="progressBar"></div>
-        </div>
-
-        <article class="question-panel">
-          <h2 id="questionText"></h2>
-          <div id="optionList" class="option-list"></div>
-          <p id="missingNotice" class="notice compact" hidden>
-            يجب إكمال جميع الأسئلة قبل تسليم النتيجة النهائية.
-          </p>
-        </article>
-
-        <div class="navigation-row">
-          <button type="button" id="prevButton" class="secondary-button">السابق</button>
-          <button type="button" id="nextButton" class="primary-button">التالي</button>
-          <button type="button" id="finishButton" class="primary-button" hidden>إنهاء الاختبار</button>
+<!-- TESTS -->
+<section id="tests">
+  <div class="section-inner">
+    <div class="fade-up">
+      <p class="section-eyebrow">الاختبارات التشخيصية</p>
+      <h2 class="section-title">7 اختبارات · ليست للنجاح والرسوب</h2>
+      <p class="section-desc">الهدف تشخيص المستوى الحقيقي في كل محور — لتحديد المسار الأنسب لكل شخص قبل البدء.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="tests-grid fade-up">
+      <div class="test-card">
+        <div class="test-num">اختبار 01</div>
+        <div class="test-title">أنماط التفكير</div>
+        <div class="test-tags">
+          <span class="tag">نقدي</span>
+          <span class="tag">منطقي</span>
+          <span class="tag">إبداعي</span>
+          <span class="tag">نظامي</span>
+          <span class="tag">استراتيجي</span>
         </div>
       </div>
-    </section>
+      <div class="test-card">
+        <div class="test-num">اختبار 02</div>
+        <div class="test-title">تحليل المشاكل</div>
+        <div class="test-tags">
+          <span class="tag">تحديد المشكلة</span>
+          <span class="tag">السبب الجذري</span>
+          <span class="tag">5 Whys</span>
+          <span class="tag">البيانات</span>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-num">اختبار 03</div>
+        <div class="test-title">تحليل الأحداث والقرارات</div>
+        <div class="test-tags">
+          <span class="tag">أصحاب المصلحة</span>
+          <span class="tag">المخاطر</span>
+          <span class="tag">توقع النتائج</span>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-num">اختبار 04</div>
+        <div class="test-title">المهارات الرقمية</div>
+        <div class="test-tags">
+          <span class="tag">Word / Excel</span>
+          <span class="tag">PowerPoint</span>
+          <span class="tag">الأمان الرقمي</span>
+          <span class="tag">السحابة</span>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-num">اختبار 05</div>
+        <div class="test-title">أساسيات AI</div>
+        <div class="test-tags">
+          <span class="tag">ما هو AI</span>
+          <span class="tag">الهلوسة</span>
+          <span class="tag">الخصوصية</span>
+          <span class="tag">التحقق</span>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-num">اختبار 06</div>
+        <div class="test-title">التعامل الصحيح مع AI</div>
+        <div class="test-tags">
+          <span class="tag">Prompting</span>
+          <span class="tag">السياق</span>
+          <span class="tag">كشف الأخطاء</span>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-num">اختبار 07</div>
+        <div class="test-title">تطوير الذات والانضباط</div>
+        <div class="test-tags">
+          <span class="tag">وضوح الهدف</span>
+          <span class="tag">إدارة الوقت</span>
+          <span class="tag">الاستمرارية</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="screen screen-report" aria-labelledby="reportTitle">
-      <div class="report-actions">
+<!-- LEVELS -->
+<section id="levels" class="levels-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <p class="section-eyebrow">مستويات المتعلمين</p>
+      <h2 class="section-title">كل شخص له مسار يناسبه</h2>
+      <p class="section-desc">المنظومة لا تعامل الجميع بنفس المستوى — التشخيص يحدد نقطة البداية الصحيحة.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="levels-track fade-up">
+      <div class="level-item">
+        <div class="level-badge">1</div>
         <div>
-          <p class="eyebrow">التقرير النهائي</p>
-          <h2 id="reportTitle">النتيجة والتوصية</h2>
-        </div>
-        <div class="button-row">
-          <button type="button" id="printButton" class="secondary-button">طباعة / حفظ PDF</button>
-          <button type="button" id="downloadButton" class="secondary-button">تنزيل JSON</button>
-          <button type="button" id="newAssessmentButton" class="ghost-button">اختبار جديد</button>
+          <div class="level-name">مبتدئ · Foundation</div>
+          <div class="level-focus">بناء اللغة الأساسية والمفاهيم الجوهرية — التمييز بين الرأي والحقيقة، وتأسيس عادة التعلم المنتظم</div>
+          <div class="level-chips">
+            <span class="chip">المصطلحات الأساسية</span>
+            <span class="chip">AI للشرح والتلخيص</span>
+            <span class="chip">تنظيم الملفات</span>
+          </div>
         </div>
       </div>
+      <div class="level-item">
+        <div class="level-badge">2</div>
+        <div>
+          <div class="level-name">متوسط · Application</div>
+          <div class="level-focus">تحليل المشاكل وصياغة التقارير — مقارنة الخيارات وبناء Prompts أكثر دقة واحترافية</div>
+          <div class="level-chips">
+            <span class="chip">تحليل المشاكل</span>
+            <span class="chip">جداول البيانات</span>
+            <span class="chip">مقارنة الخيارات</span>
+          </div>
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="level-badge">3</div>
+        <div>
+          <div class="level-name">متقدم · Advanced</div>
+          <div class="level-focus">تحليل استراتيجي وربط البيانات بالقرار — بناء Dashboards بسيطة وتقييم مخرجات AI بنقدية</div>
+          <div class="level-chips">
+            <span class="chip">تحليل استراتيجي</span>
+            <span class="chip">لوحات المؤشرات</span>
+            <span class="chip">نقد AI</span>
+          </div>
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="level-badge">4</div>
+        <div>
+          <div class="level-name">محترف · Mastery</div>
+          <div class="level-focus">بناء نماذج التحليل وتصميم الأدوات — تحويل AI إلى مساعد إنتاجي متكامل ومراجعة جودة القرارات</div>
+          <div class="level-chips">
+            <span class="chip">نماذج التحليل</span>
+            <span class="chip">تصميم الأدوات</span>
+            <span class="chip">AI استراتيجي</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <p id="cloudSuccess" class="notice success" hidden>تم حفظ النتيجة في Google Sheets.</p>
-      <p id="cloudWarning" class="notice warning" hidden></p>
-      <div id="reportContainer"></div>
-    </section>
-  </main>
+<!-- WEEK EXAMPLE -->
+<section>
+  <div class="section-inner">
+    <div class="fade-up">
+      <p class="section-eyebrow">نموذج أسبوع</p>
+      <h2 class="section-title">كيف يبدو الأسبوع الثاني</h2>
+      <p class="section-desc">كل أسبوع يسير بنمط ثابت يربط المفهوم بالتطبيق العملي وأدوات AI.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="week-box fade-up">
+      <div class="week-header">
+        <span class="week-badge">الأسبوع 2</span>
+        <span class="week-topic">التفكير النقدي · صياغة المشكلة · Prompt واضح</span>
+      </div>
+      <div class="week-steps">
+        <div class="week-step">
+          <div class="step-label">📖 القصة</div>
+          <div class="step-text">موقف واقعي يواجه المتعلم — موظف يتأخر في التسليم، والمدير يظن المشكلة كسل.</div>
+        </div>
+        <div class="week-step">
+          <div class="step-label">💡 المفهوم</div>
+          <div class="step-text">الفرق بين العرض والسبب الجذري — ما نراه ليس ما يصنع المشكلة.</div>
+        </div>
+        <div class="week-step">
+          <div class="step-label">✏️ التمرين</div>
+          <div class="step-text">حالة قصيرة: حدد العرض، المشكلة، والسبب المحتمل بشكل منفصل.</div>
+        </div>
+        <div class="week-step">
+          <div class="step-label">🤖 مع AI</div>
+          <div class="step-text">"تصرف كمحلل مشاكل، فرّق بين العرض والمشكلة والسبب — ولا تقترح حلولًا قبل التحليل."</div>
+        </div>
+        <div class="week-step">
+          <div class="step-label">📄 المخرج</div>
+          <div class="step-text">تقرير قصير من صفحة واحدة — مشكلة محددة، أسباب محتملة، لا حلول متسرعة.</div>
+        </div>
+        <div class="week-step">
+          <div class="step-label">💻 الكمبيوتر</div>
+          <div class="step-text">كتابة التقرير في Word بتنسيق مناسب — عناوين، فقرات، ترتيب.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="config.js"></script>
-  <script src="questions.js"></script>
-  <script src="scoring.js"></script>
-  <script src="report.js"></script>
-  <script src="storage.js"></script>
-  <script src="app.js"></script>
+<!-- KPI -->
+<section class="kpi-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <p class="section-eyebrow">مؤشرات النجاح</p>
+      <h2 class="section-title">كيف نقيس التقدم الحقيقي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="kpi-grid fade-up">
+      <div class="kpi-card">
+        <span class="kpi-icon">📊</span>
+        <div class="kpi-label">التفكير النقدي</div>
+        <div class="kpi-method">مقارنة الاختبار القبلي والبعدي</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-icon">🎯</span>
+        <div class="kpi-label">جودة تحليل المشكلة</div>
+        <div class="kpi-method">Rubric تقييم من 5 درجات</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-icon">🤖</span>
+        <div class="kpi-label">استخدام AI الصحيح</div>
+        <div class="kpi-method">جودة الطلبات والمراجعة النقدية</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-icon">💻</span>
+        <div class="kpi-label">المهارة الرقمية</div>
+        <div class="kpi-method">مخرجات Word/Excel/PowerPoint</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-icon">📅</span>
+        <div class="kpi-label">الاستمرارية</div>
+        <div class="kpi-method">نسبة إكمال التمارين الأسبوعية</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-icon">⚖️</span>
+        <div class="kpi-label">جودة القرار</div>
+        <div class="kpi-method">وضوح السبب، البدائل، والمخاطر</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-icon">📚</span>
+        <div class="kpi-label">التعلم الذاتي</div>
+        <div class="kpi-method">قدرة البحث والتلخيص والتطبيق</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-icon">🔄</span>
+        <div class="kpi-label">التقييم الذاتي</div>
+        <div class="kpi-method">وعي الشخص بفجواته ونموه</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-title">الفكرة لا تنضج بالتصميم<br>بل بالتطبيق</div>
+  <p class="cta-sub">كل رحلة تبدأ باختبار تشخيصي واحد — لأن معرفة نقطة البداية هي نصف الطريق.</p>
+  <button class="cta-btn" onclick="window.location.href='assessment.html?mode=diagnostic'">ابدأ الاختبار التشخيصي</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  منظومة بناء العقل التحليلي والمهارات الرقمية · مبادرة شخصية · 2025
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
