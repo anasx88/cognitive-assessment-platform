@@ -1,4 +1,4 @@
-(function attachScoring(root) {
+﻿(function attachScoring(root) {
   const MAJOR_AXES = [
     "thinking",
     "analysis",
@@ -54,7 +54,7 @@
           totalMax += 3;
         }
 
-        if (question.riskFlag) {
+        if (question.riskFlag && score <= 1) {
           riskFlags[question.riskFlag] = (riskFlags[question.riskFlag] || 0) + 1;
         }
       }
@@ -193,7 +193,7 @@
       scores.axisScores.analysis === 50 &&
       scores.overall === 75 &&
       consistencyIndex === 50 &&
-      scores.riskFlags.jumpingToSolutions === 2
+      scores.riskFlags.jumpingToSolutions === undefined
     );
   }
 
@@ -210,3 +210,4 @@
     module.exports = api;
   }
 })(typeof window !== "undefined" ? window : globalThis);
+
