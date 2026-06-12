@@ -1,14 +1,14 @@
 ﻿const TEST_MODE_CONFIG = {
   screening: {
-    label: "اختبار الفرز - نسخة تجريبية",
-    totalQuestions: 160,
+    label: "اختبار الفرز",
+    totalQuestions: 80,
     quotas: {
-      thinking: 30,
-      analysis: 30,
-      selfDevelopment: 30,
-      digitalAiBasics: 20,
-      aiInteraction: 20,
-      hiddenConsistency: 30
+      thinking: 15,
+      analysis: 15,
+      selfDevelopment: 15,
+      digitalAiBasics: 10,
+      aiInteraction: 10,
+      hiddenConsistency: 15
     }
   },
   diagnostic: {
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
