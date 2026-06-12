@@ -166,6 +166,11 @@
     return "";
   }
 
+  function getRequestedTestType() {
+    const mode = new URLSearchParams(window.location.search).get("mode");
+    return root.TEST_MODE_CONFIG[mode] ? mode : "screening";
+  }
+
 
   function getBestAnswerText(question) {
     const maxScore = Math.max(...question.options.map((option) => option.score));
@@ -448,6 +453,8 @@
   function init() {
     cacheDom();
     bindEvents();
+    state.testType = getRequestedTestType();
+    $("#testType").value = state.testType;
     setScreen("start");
 
     const saved = root.AssessmentStorage.loadProgress();

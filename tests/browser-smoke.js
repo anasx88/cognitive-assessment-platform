@@ -116,7 +116,7 @@ async function run() {
     await cdp.send("Runtime.enable");
     await cdp.send("Page.enable");
 
-    const fileUrl = `file:///${path.resolve("index.html").replace(/\\/g, "/")}`;
+    const fileUrl = `file:///${path.resolve("assessment.html").replace(/\\/g, "/")}?mode=diagnostic`;
     await cdp.send("Page.navigate", { url: fileUrl });
     await new Promise((resolve) => setTimeout(resolve, 700));
 
@@ -124,7 +124,6 @@ async function run() {
       expression: `
         document.querySelector("#participantName").value = "مشارك تجريبي";
         document.querySelector("#batchCode").value = "BATCH-01";
-        document.querySelector("#testType").value = "screening";
         document.querySelector("#startForm").requestSubmit();
       `
     });
@@ -159,8 +158,38 @@ async function run() {
     assert.strictEqual(result.result.value.screen, "assessment");
     assert.strictEqual(result.result.value.questionVisible, true);
     assert.strictEqual(result.result.value.options, 4);
-    assert.strictEqual(result.result.value.progress, "السؤال 1 من 80");
+    assert.strictEqual(result.result.value.progress, "السؤال 1 من 160");
     assert.strictEqual(result.result.value.appLoaded, true);
+
+    await cdp.send("Runtime.evaluate", {
+      expression: `
+        for (let index = 0; index < 160; index += 1) {
+          document.querySelector(".option-card input").click();
+          const nextButton = document.querySelector("#nextButton");
+          if (!nextButton.hidden) {
+            nextButton.click();
+          }
+        }
+        document.querySelector("#finishButton").click();
+      `
+    });
+    await new Promise((resolve) => setTimeout(resolve, 900));
+
+    const reportResult = await cdp.send("Runtime.evaluate", {
+      returnByValue: true,
+      expression: `({
+        screen: document.body.dataset.screen,
+        reportVisible: document.querySelector("#reportContainer").textContent.includes("النتيجة والتوصية") ||
+          document.querySelector("#reportContainer").textContent.includes("تقرير الجاهزية"),
+        warningVisible: !document.querySelector("#cloudWarning").hidden,
+        downloadEnabled: Boolean(window.AssessmentStorage && document.querySelector("#downloadButton"))
+      })`
+    });
+
+    assert.strictEqual(reportResult.result.value.screen, "report");
+    assert.strictEqual(reportResult.result.value.reportVisible, true);
+    assert.strictEqual(reportResult.result.value.warningVisible, true);
+    assert.strictEqual(reportResult.result.value.downloadEnabled, true);
 
     console.log("Browser smoke test passed");
   } finally {

@@ -2,5 +2,10 @@
 questions.backup.*.js
 R03-review-candidates.md
 R06-*.md
+RELEASE_QA*.md
+RELEASE_REVIEW*.md
+review-report*.md
+local-review*.md
 *.backup.*.js
+*.bak
 index-landing.html
