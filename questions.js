@@ -651,10 +651,10 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "إذا كتب لك AI تقريرًا يبدو ممتازًا، ما الخطوة التالية؟",
     options: [
-      { id: "A", text: "أراجع المنطق والمعلومات.", score: 3 },
+      { id: "A", text: "أراجع المحتوى.", score: 3 },
       { id: "B", text: "أحسن الأسلوب.", score: 1 },
       { id: "C", text: "أفحص الثغرات.", score: 2 },
-      { id: "D", text: "أراجع سريعًا.", score: 1 }
+      { id: "D", text: "أستخدمه.", score: 1 }
     ]
   },
   {
@@ -718,8 +718,8 @@ const QUESTION_BANK = [
     options: [
       { id: "A", text: "غالبًا.", score: 2 },
       { id: "B", text: "أحيانًا.", score: 2 },
-      { id: "C", text: "حسب النظام.", score: 3 },
-      { id: "D", text: "بدرجة محدودة.", score: 1 }
+      { id: "C", text: "بالنظام.", score: 3 },
+      { id: "D", text: "قليلًا.", score: 1 }
     ]
   },
   {
@@ -846,9 +846,9 @@ const QUESTION_BANK = [
     riskFlag: "lowSelfAwareness",
     text: "لديك قرار سريع ولا توجد كل المعلومات. ما التصرف الأقرب للنضج؟",
     options: [
-      { id: "A", text: "أحدد معلومات كافية.", score: 3 },
-      { id: "B", text: "أنتظر معلومات.", score: 1 },
-      { id: "C", text: "أوضح افتراضاتي.", score: 2 },
+      { id: "A", text: "أحدد الكافي.", score: 3 },
+      { id: "B", text: "أنتظر.", score: 1 },
+      { id: "C", text: "أوضح الافتراضات.", score: 2 },
       { id: "D", text: "أعرض بدائل.", score: 1 }
     ]
   },
@@ -1217,7 +1217,7 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "عندما تكون واثقًا من رأيك ثم تظهر معلومة تخالفه، ماذا تفعل غالبًا؟",
     options: [
-      { id: "A", text: "أراجع الرأي بالمعلومة.", score: 3 },
+      { id: "A", text: "أراجع رأيي.", score: 3 },
       { id: "B", text: "أبحث عن تفسير.", score: 1 },
       { id: "C", text: "أفحص المصدر.", score: 2 },
       { id: "D", text: "أؤجل الحكم.", score: 1 }
@@ -1573,8 +1573,8 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "ما العلامة التي تدل أنك تستخدم AI بدل التفكير لا لدعم التفكير؟",
     options: [
-      { id: "A", text: "أطلب منه أمثلة.", score: 1 },
-      { id: "B", text: "أقبل المخرج بلا فهم.", score: 3 },
+      { id: "A", text: "أطلب أمثلة.", score: 1 },
+      { id: "B", text: "أقبل بلا فهم.", score: 3 },
       { id: "C", text: "أطلب تبسيطًا.", score: 1 },
       { id: "D", text: "أطلب أسئلة.", score: 1 }
     ]
@@ -1638,10 +1638,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "شخص يغير مصدر التعلم كل يوم لأنه وجد شيئًا أفضل. ما تقييمك؟",
     options: [
-      { id: "A", text: "يحتاج معيارًا قبل التغيير.", score: 3 },
-      { id: "B", text: "يتابع البدائل كثيرًا.", score: 1 },
-      { id: "C", text: "لديه مرونة تعلم.", score: 2 },
-      { id: "D", text: "يخلط البحث بالتقدم.", score: 2 }
+      { id: "A", text: "يحتاج معيارًا.", score: 3 },
+      { id: "B", text: "يطارد البدائل.", score: 1 },
+      { id: "C", text: "مرن جزئيًا.", score: 2 },
+      { id: "D", text: "يخلط البحث.", score: 2 }
     ]
   },
   {
@@ -1734,10 +1734,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "ما مستوى ثقتك في إجابات AI عندما تكون مكتوبة بثقة؟",
     options: [
-      { id: "A", text: "أتحقق حسب الحساسية.", score: 3 },
-      { id: "B", text: "أثق إذا بدت منطقية.", score: 1 },
-      { id: "C", text: "أراجع القرار المهم.", score: 2 },
-      { id: "D", text: "أثق إذا كانت مفصلة.", score: 1 }
+      { id: "A", text: "أتحقق.", score: 3 },
+      { id: "B", text: "أثق بالمنطق.", score: 1 },
+      { id: "C", text: "أراجع المهم.", score: 2 },
+      { id: "D", text: "أثق بالتفصيل.", score: 1 }
     ]
   },
   {
@@ -2383,10 +2383,10 @@ const QUESTION_BANK = [
     riskFlag: "lowSelfAwareness",
     text: "عندما يثبت أن قرارًا سابقًا كان خاطئًا، ما الاستجابة الأقرب للنضج؟",
     options: [
-      { id: "A", text: "أبرر القرار السابق.", score: 1 },
-      { id: "B", text: "أراجع المعلومات والافتراضات.", score: 3 },
+      { id: "A", text: "أبرر السابق.", score: 1 },
+      { id: "B", text: "أراجع الافتراضات.", score: 3 },
       { id: "C", text: "أبحث عن المتسبب.", score: 1 },
-      { id: "D", text: "أتجنب قرارات مشابهة.", score: 1 }
+      { id: "D", text: "أتجنب المشابه.", score: 1 }
     ]
   },
   {
@@ -2399,10 +2399,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "شخص يحفظ أمثلة كثيرة لكنه لا يستطيع استخراج القاعدة منها. ما الفجوة الأقرب؟",
     options: [
-      { id: "A", text: "معرفة بلا تجريد.", score: 3 },
-      { id: "B", text: "يحتاج استخراج القاعدة.", score: 2 },
-      { id: "C", text: "يحتاج أمثلة أكثر.", score: 1 },
-      { id: "D", text: "يفهم الأمثلة فقط.", score: 1 }
+      { id: "A", text: "غياب التجريد.", score: 3 },
+      { id: "B", text: "ضعف استخراج القاعدة.", score: 2 },
+      { id: "C", text: "قلة الأمثلة.", score: 1 },
+      { id: "D", text: "حفظ الأمثلة.", score: 1 }
     ]
   },
   {
@@ -2464,10 +2464,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "إذا كان رضا المستفيدين منخفضًا، ما التحليل الأقوى من مجرد المتوسط العام؟",
     options: [
-      { id: "A", text: "تقسيم الرضا حسب الفئة.", score: 3 },
-      { id: "B", text: "إعلان الحاجة للتحسين.", score: 1 },
-      { id: "C", text: "مقارنة الفئات.", score: 2 },
-      { id: "D", text: "تدريب الفريق.", score: 1 }
+      { id: "A", text: "أقسم الرضا.", score: 3 },
+      { id: "B", text: "أعلن التحسين.", score: 1 },
+      { id: "C", text: "أقارن الفئات.", score: 2 },
+      { id: "D", text: "أدرب الفريق.", score: 1 }
     ]
   },
   {
@@ -2561,10 +2561,10 @@ const QUESTION_BANK = [
     riskFlag: "avoidingApplication",
     text: "ما الذي يجعل التدريب على مهارة فعّالًا؟",
     options: [
-      { id: "A", text: "تدريب مركز مع تصحيح.", score: 3 },
-      { id: "B", text: "تكرار يزيد الألفة.", score: 1 },
+      { id: "A", text: "تدريب وتصحيح.", score: 3 },
+      { id: "B", text: "تكرار وألفة.", score: 1 },
       { id: "C", text: "تجربة ومراجعة.", score: 2 },
-      { id: "D", text: "قراءة أوسع.", score: 1 }
+      { id: "D", text: "قراءة أكثر.", score: 1 }
     ]
   },
   {
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
