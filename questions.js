@@ -652,9 +652,9 @@ const QUESTION_BANK = [
     text: "إذا كتب لك AI تقريرًا يبدو ممتازًا، ما الخطوة التالية؟",
     options: [
       { id: "A", text: "أراجع المنطق والمعلومات.", score: 3 },
-      { id: "B", text: "أطلب تحسين الأسلوب.", score: 1 },
-      { id: "C", text: "أطلب كشف الثغرات.", score: 2 },
-      { id: "D", text: "أستخدمه بعد مراجعة.", score: 1 }
+      { id: "B", text: "أحسن الأسلوب.", score: 1 },
+      { id: "C", text: "أفحص الثغرات.", score: 2 },
+      { id: "D", text: "أراجع سريعًا.", score: 1 }
     ]
   },
   {
@@ -716,7 +716,7 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "هل ترى نفسك شخصًا منضبطًا في التعلم؟",
     options: [
-      { id: "A", text: "نعم غالبًا.", score: 2 },
+      { id: "A", text: "غالبًا.", score: 2 },
       { id: "B", text: "أحيانًا.", score: 2 },
       { id: "C", text: "حسب النظام.", score: 3 },
       { id: "D", text: "بدرجة محدودة.", score: 1 }
@@ -847,9 +847,9 @@ const QUESTION_BANK = [
     text: "لديك قرار سريع ولا توجد كل المعلومات. ما التصرف الأقرب للنضج؟",
     options: [
       { id: "A", text: "أحدد معلومات كافية.", score: 3 },
-      { id: "B", text: "أنتظر معلومات إضافية.", score: 1 },
-      { id: "C", text: "أوضح الافتراضات.", score: 2 },
-      { id: "D", text: "أعرض البدائل.", score: 1 }
+      { id: "B", text: "أنتظر معلومات.", score: 1 },
+      { id: "C", text: "أوضح افتراضاتي.", score: 2 },
+      { id: "D", text: "أعرض بدائل.", score: 1 }
     ]
   },
   {
@@ -1217,10 +1217,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "عندما تكون واثقًا من رأيك ثم تظهر معلومة تخالفه، ماذا تفعل غالبًا؟",
     options: [
-      { id: "A", text: "أراجع الرأي بقوة المعلومة.", score: 3 },
-      { id: "B", text: "أبحث عن تفسير داعم.", score: 1 },
-      { id: "C", text: "أفحص مصدر المعلومة.", score: 2 },
-      { id: "D", text: "أؤجل الحكم مؤقتًا.", score: 1 }
+      { id: "A", text: "أراجع الرأي بالمعلومة.", score: 3 },
+      { id: "B", text: "أبحث عن تفسير.", score: 1 },
+      { id: "C", text: "أفحص المصدر.", score: 2 },
+      { id: "D", text: "أؤجل الحكم.", score: 1 }
     ]
   },
   {
@@ -1249,10 +1249,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "لديك حل يبدو جيدًا لكنك لم تفحص مخاطره، والوقت ضيق. ماذا تفعل؟",
     options: [
-      { id: "A", text: "أطبقه بسرعة لتجنب التأخير.", score: 1 },
-      { id: "B", text: "أفحص خطرين رئيسيين قبل التوصية.", score: 3 },
-      { id: "C", text: "أطلب موافقة الإدارة على القرار.", score: 1 },
-      { id: "D", text: "أؤجل القرار لمراجعة أوسع.", score: 2 }
+      { id: "A", text: "أطبقه بسرعة.", score: 1 },
+      { id: "B", text: "أفحص المخاطر الرئيسية.", score: 3 },
+      { id: "C", text: "أطلب موافقة.", score: 1 },
+      { id: "D", text: "أؤجل للمراجعة.", score: 2 }
     ]
   },
   {
@@ -1476,10 +1476,10 @@ const QUESTION_BANK = [
     riskFlag: "lowDigitalReadiness",
     text: "لديك نص طويل وتريد استخراج النقاط الرئيسية ثم تحويلها إلى جدول. ما الدمج الأنسب؟",
     options: [
-      { id: "A", text: "أستخرج النقاط ثم أنظمها في جدول.", score: 3 },
-      { id: "B", text: "أكتب النص في Word وأرتبه.", score: 1 },
-      { id: "C", text: "أعرض النقاط في شرائح مباشرة.", score: 1 },
-      { id: "D", text: "ألخص النص ثم أراجعه يدويًا.", score: 2 }
+      { id: "A", text: "أستخرج النقاط وأنظمها.", score: 3 },
+      { id: "B", text: "أرتبه في Word.", score: 1 },
+      { id: "C", text: "أعرضه في شرائح.", score: 1 },
+      { id: "D", text: "ألخصه وأراجعه.", score: 2 }
     ]
   },
   {
@@ -1573,10 +1573,10 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "ما العلامة التي تدل أنك تستخدم AI بدل التفكير لا لدعم التفكير؟",
     options: [
-      { id: "A", text: "عندما أطلب منه أمثلة.", score: 1 },
-      { id: "B", text: "عندما أقبل مخرجاته دون فهم أو مراجعة.", score: 3 },
-      { id: "C", text: "عندما أطلب منه تبسيط مفهوم.", score: 1 },
-      { id: "D", text: "عندما أطلب منه طرح أسئلة.", score: 1 }
+      { id: "A", text: "أطلب منه أمثلة.", score: 1 },
+      { id: "B", text: "أقبل المخرج بلا فهم.", score: 3 },
+      { id: "C", text: "أطلب تبسيطًا.", score: 1 },
+      { id: "D", text: "أطلب أسئلة.", score: 1 }
     ]
   },
   {
@@ -1605,10 +1605,10 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "عند استخدام AI للتعلم، أي دور تطلبه منه؟",
     options: [
-      { id: "A", text: "مدرب يشرح ويسأل ثم يصحح الأداء.", score: 3 },
-      { id: "B", text: "كاتب يصيغ الإجابات عند الحاجة.", score: 1 },
-      { id: "C", text: "مساعد يلخص ويفتح أمثلة تدريبية.", score: 2 },
-      { id: "D", text: "منظم يحول الدروس إلى نقاط.", score: 1 }
+      { id: "A", text: "مدرب يشرح ويختبر ويصحح.", score: 3 },
+      { id: "B", text: "كاتب يصيغ الإجابات.", score: 1 },
+      { id: "C", text: "مساعد يلخص ويدرّب.", score: 2 },
+      { id: "D", text: "منظم يحول لنقاط.", score: 1 }
     ]
   },
 
@@ -1638,10 +1638,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "شخص يغير مصدر التعلم كل يوم لأنه وجد شيئًا أفضل. ما تقييمك؟",
     options: [
-      { id: "A", text: "يحتاج معيارًا واضحًا قبل تغيير المصدر.", score: 3 },
-      { id: "B", text: "يتابع البدائل حتى لا يفوته الأفضل.", score: 1 },
-      { id: "C", text: "لديه مرونة في تطوير طريقته.", score: 2 },
-      { id: "D", text: "قد يخلط بين البحث والتقدم الفعلي.", score: 2 }
+      { id: "A", text: "يحتاج معيارًا قبل التغيير.", score: 3 },
+      { id: "B", text: "يتابع البدائل كثيرًا.", score: 1 },
+      { id: "C", text: "لديه مرونة تعلم.", score: 2 },
+      { id: "D", text: "يخلط البحث بالتقدم.", score: 2 }
     ]
   },
   {
@@ -1686,10 +1686,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "شخص يحضر دورات كثيرة لكنه لا يربطها بأي موقف واقعي. ما المشكلة المحتملة؟",
     options: [
-      { id: "A", text: "يحتاج تحويل المعرفة إلى مواقف تطبيقية.", score: 3 },
-      { id: "B", text: "يزيد مخزونه المعرفي قبل التطبيق.", score: 2 },
-      { id: "C", text: "يتعلم نظريًا دون نقل واضح للأداء.", score: 2 },
-      { id: "D", text: "يبحث عن دورة أنسب قبل التطبيق.", score: 1 }
+      { id: "A", text: "يحتاج تحويلًا للتطبيق.", score: 3 },
+      { id: "B", text: "يزيد مخزونه المعرفي.", score: 2 },
+      { id: "C", text: "يتعلم دون نقل أداء.", score: 2 },
+      { id: "D", text: "يبحث عن دورة أنسب.", score: 1 }
     ]
   },
   {
@@ -1734,10 +1734,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "ما مستوى ثقتك في إجابات AI عندما تكون مكتوبة بثقة؟",
     options: [
-      { id: "A", text: "أتحقق حسب حساسية الموضوع.", score: 3 },
-      { id: "B", text: "أثق بها إذا بدت منطقية.", score: 1 },
-      { id: "C", text: "أراجعها إذا كان القرار مهمًا.", score: 2 },
-      { id: "D", text: "أثق بها إذا كانت مفصلة.", score: 1 }
+      { id: "A", text: "أتحقق حسب الحساسية.", score: 3 },
+      { id: "B", text: "أثق إذا بدت منطقية.", score: 1 },
+      { id: "C", text: "أراجع القرار المهم.", score: 2 },
+      { id: "D", text: "أثق إذا كانت مفصلة.", score: 1 }
     ]
   },
   {
@@ -1784,9 +1784,9 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "إذا قال شخص: النتيجة واضحة ولا تحتاج بيانات، ما التصرف الأقرب للتفكير الناضج؟",
     options: [
-      { id: "A", text: "أقبلها مبدئيًا إذا وُجدت خبرة.", score: 1 },
-      { id: "B", text: "أطلب دليلًا مختصرًا قبل الحكم.", score: 3 },
-      { id: "C", text: "أناقشها مع شخص آخر.", score: 2 },
+      { id: "A", text: "أقبلها مع خبرة.", score: 1 },
+      { id: "B", text: "أطلب دليلًا مختصرًا.", score: 3 },
+      { id: "C", text: "أناقشها مع آخر.", score: 2 },
       { id: "D", text: "أنتظر رأي الأغلبية.", score: 1 }
     ]
   },
@@ -1864,10 +1864,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "إذا اختلف شخصان لأن كل واحد يستخدم نفس الكلمة بمعنى مختلف، ما أول إجراء؟",
     options: [
-      { id: "A", text: "تحديد تعريف مشترك للكلمة قبل النقاش.", score: 3 },
-      { id: "B", text: "اختيار رأي الطرف الأقوى.", score: 0 },
-      { id: "C", text: "إطالة النقاش حتى يتضح المقصود.", score: 1 },
-      { id: "D", text: "تجنب الكلمة واستخدام بديل عام.", score: 1 }
+      { id: "A", text: "أحدد تعريفًا مشتركًا.", score: 3 },
+      { id: "B", text: "أختار رأي الأقوى.", score: 1 },
+      { id: "C", text: "أطيل النقاش.", score: 1 },
+      { id: "D", text: "أستخدم بديلًا عامًا.", score: 1 }
     ]
   },
   {
@@ -2042,10 +2042,10 @@ const QUESTION_BANK = [
     riskFlag: "avoidingApplication",
     text: "إذا لم يكن المدرب واضحًا بما يكفي، ما التصرف الأقرب للمتعلم الناضج؟",
     options: [
-      { id: "A", text: "يطرح سؤالًا محددًا ثم يجرب مثالًا.", score: 3 },
-      { id: "B", text: "ينتظر شرحًا آخر قبل المحاولة.", score: 1 },
-      { id: "C", text: "يبحث عن مثال يساعده على الفهم.", score: 2 },
-      { id: "D", text: "ينتقل إلى مصدر آخر بسرعة.", score: 1 }
+      { id: "A", text: "يسأل ويجرب مثالًا.", score: 3 },
+      { id: "B", text: "ينتظر شرحًا آخر.", score: 1 },
+      { id: "C", text: "يبحث عن مثال.", score: 2 },
+      { id: "D", text: "ينتقل لمصدر آخر.", score: 1 }
     ]
   },
 
@@ -2155,10 +2155,10 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "أي مهمة أنسب لاستخدام AI كبداية آمنة؟",
     options: [
-      { id: "A", text: "تلخيص نص عام مع مراجعة بشرية.", score: 3 },
-      { id: "B", text: "صياغة رأي نظامي قبل اعتماده.", score: 1 },
-      { id: "C", text: "اقتراح قرار مالي أولي للمراجعة.", score: 2 },
-      { id: "D", text: "تحرير معلومة حساسة للنشر السريع.", score: 1 }
+      { id: "A", text: "تلخيص نص عام.", score: 3 },
+      { id: "B", text: "صياغة رأي نظامي.", score: 1 },
+      { id: "C", text: "اقتراح قرار أولي.", score: 2 },
+      { id: "D", text: "تحرير معلومة حساسة.", score: 1 }
     ]
   },
 
@@ -2301,10 +2301,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "شخص يحمّل المدرب كامل مسؤولية عدم فهمه. ما تقييمك؟",
     options: [
-      { id: "A", text: "قد يكون للشرح دور إذا لم تكن الأمثلة واضحة.", score: 2 },
-      { id: "B", text: "قد يكون للشرح دور، لكن المتعلم يحتاج سؤالًا وتطبيقًا وبحثًا مساعدًا.", score: 3 },
-      { id: "C", text: "يتجنب مسؤوليته كمتعلم.", score: 2 },
-      { id: "D", text: "يجب أن يترك التعلم الذاتي.", score: 0 }
+      { id: "A", text: "للشرح دور محتمل.", score: 2 },
+      { id: "B", text: "يحتاج سؤالًا وتطبيقًا.", score: 3 },
+      { id: "C", text: "يتجنب مسؤوليته.", score: 2 },
+      { id: "D", text: "يترك التعلم الذاتي.", score: 1 }
     ]
   },
   {
@@ -2317,10 +2317,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "عندما يعطيك AI معلومة حديثة دون مصدر، ما الذي تفعله غالبًا؟",
     options: [
-      { id: "A", text: "أقبلها إذا كانت مقنعة.", score: 0 },
-      { id: "B", text: "أبحث عن مصدر موثوق قبل استخدامها.", score: 3 },
-      { id: "C", text: "أطلب منه إعادة الصياغة.", score: 1 },
-      { id: "D", text: "أستخدمها مع عبارة حسب ما ورد.", score: 1 }
+      { id: "A", text: "أقبلها إذا أقنعتني.", score: 1 },
+      { id: "B", text: "أبحث عن مصدر موثوق.", score: 3 },
+      { id: "C", text: "أطلب إعادة صياغة.", score: 1 },
+      { id: "D", text: "أستخدمها بتحفظ.", score: 2 }
     ]
   }
 
@@ -2351,10 +2351,10 @@ const QUESTION_BANK = [
     riskFlag: "lowSelfAwareness",
     text: "عندما يكون لكل خيار مكسب وخسارة، ما طريقة التفكير الأفضل؟",
     options: [
-      { id: "A", text: "اختيار الخيار الذي له مكاسب أكثر ظاهريًا.", score: 1 },
-      { id: "B", text: "تحديد المفاضلات وما الذي أقبل خسارته مقابل الهدف.", score: 3 },
-      { id: "C", text: "تجنب القرار حتى يظهر خيار بلا خسائر.", score: 0 },
-      { id: "D", text: "اختيار ما يفضله أغلب الناس.", score: 1 }
+      { id: "A", text: "أختار مكاسب أكثر.", score: 1 },
+      { id: "B", text: "أحدد المفاضلات المقبولة.", score: 3 },
+      { id: "C", text: "أنتظر خيارًا أفضل.", score: 1 },
+      { id: "D", text: "أختار رأي الأغلب.", score: 1 }
     ]
   },
   {
@@ -2383,10 +2383,10 @@ const QUESTION_BANK = [
     riskFlag: "lowSelfAwareness",
     text: "عندما يثبت أن قرارًا سابقًا كان خاطئًا، ما الاستجابة الأقرب للنضج؟",
     options: [
-      { id: "A", text: "أبرر القرار لأنه كان مناسبًا في وقته دون مراجعة.", score: 1 },
-      { id: "B", text: "أراجع المعلومات والافتراضات التي قادت للقرار.", score: 3 },
-      { id: "C", text: "أبحث عمن تسبب في الخطأ.", score: 0 },
-      { id: "D", text: "أتجنب اتخاذ قرارات مشابهة لاحقًا.", score: 1 }
+      { id: "A", text: "أبرر القرار السابق.", score: 1 },
+      { id: "B", text: "أراجع المعلومات والافتراضات.", score: 3 },
+      { id: "C", text: "أبحث عن المتسبب.", score: 1 },
+      { id: "D", text: "أتجنب قرارات مشابهة.", score: 1 }
     ]
   },
   {
@@ -2399,10 +2399,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "شخص يحفظ أمثلة كثيرة لكنه لا يستطيع استخراج القاعدة منها. ما الفجوة الأقرب؟",
     options: [
-      { id: "A", text: "لديه معرفة بلا تجريد واضح.", score: 3 },
-      { id: "B", text: "يحتاج تدريبًا على استخراج القاعدة.", score: 2 },
-      { id: "C", text: "يحتاج أمثلة أكثر للمراجعة.", score: 1 },
-      { id: "D", text: "يفهم الأمثلة كما هي.", score: 1 }
+      { id: "A", text: "معرفة بلا تجريد.", score: 3 },
+      { id: "B", text: "يحتاج استخراج القاعدة.", score: 2 },
+      { id: "C", text: "يحتاج أمثلة أكثر.", score: 1 },
+      { id: "D", text: "يفهم الأمثلة فقط.", score: 1 }
     ]
   },
   {
@@ -2448,10 +2448,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "قبل الحكم أن الأداء تحسن، ما الشيء الذي يجب توفره؟",
     options: [
-      { id: "A", text: "انطباع عام أن الوضع أفضل.", score: 0 },
-      { id: "B", text: "خط أساس واضح للمقارنة قبل وبعد.", score: 3 },
-      { id: "C", text: "رضا الفريق عن التحسن.", score: 1 },
-      { id: "D", text: "تقرير طويل يشرح الجهود.", score: 1 }
+      { id: "A", text: "انطباع أن الوضع أفضل.", score: 1 },
+      { id: "B", text: "خط أساس للمقارنة.", score: 3 },
+      { id: "C", text: "رضا الفريق.", score: 1 },
+      { id: "D", text: "تقرير يشرح الجهود.", score: 1 }
     ]
   },
   {
@@ -2464,10 +2464,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "إذا كان رضا المستفيدين منخفضًا، ما التحليل الأقوى من مجرد المتوسط العام؟",
     options: [
-      { id: "A", text: "تقسيم الرضا حسب الخدمة أو الفئة.", score: 3 },
-      { id: "B", text: "إعلان أن مستوى الرضا يحتاج تحسينًا.", score: 1 },
-      { id: "C", text: "مقارنة الفئات لاكتشاف مصدر الانخفاض.", score: 2 },
-      { id: "D", text: "تدريب الفريق لتحسين التعامل.", score: 1 }
+      { id: "A", text: "تقسيم الرضا حسب الفئة.", score: 3 },
+      { id: "B", text: "إعلان الحاجة للتحسين.", score: 1 },
+      { id: "C", text: "مقارنة الفئات.", score: 2 },
+      { id: "D", text: "تدريب الفريق.", score: 1 }
     ]
   },
   {
@@ -2496,10 +2496,10 @@ const QUESTION_BANK = [
     riskFlag: "jumpingToSolutions",
     text: "عند وجود سبب مباشر وسبب أعمق، ما الأفضل في التحليل؟",
     options: [
-      { id: "A", text: "الاكتفاء بالسبب المباشر لأنه واضح.", score: 1 },
-      { id: "B", text: "تتبع سلسلة الأسباب حتى نصل لسبب قابل للمعالجة.", score: 3 },
-      { id: "C", text: "تجاوز الأسباب والانتقال للحلول.", score: 0 },
-      { id: "D", text: "اختيار السبب الذي يتفق عليه الجميع.", score: 1 }
+      { id: "A", text: "الاكتفاء بالسبب المباشر.", score: 1 },
+      { id: "B", text: "تتبع سلسلة الأسباب.", score: 3 },
+      { id: "C", text: "الانتقال للحلول.", score: 1 },
+      { id: "D", text: "اختيار سبب متفق.", score: 1 }
     ]
   },
   {
@@ -2561,10 +2561,10 @@ const QUESTION_BANK = [
     riskFlag: "avoidingApplication",
     text: "ما الذي يجعل التدريب على مهارة فعّالًا؟",
     options: [
-      { id: "A", text: "تدريب مركز على ضعف محدد مع تصحيح.", score: 3 },
-      { id: "B", text: "تكرار مستمر حتى تزيد الألفة.", score: 1 },
-      { id: "C", text: "تجربة قصيرة ثم مراجعة الخطأ.", score: 2 },
-      { id: "D", text: "قراءة أوسع قبل بدء التدريب.", score: 1 }
+      { id: "A", text: "تدريب مركز مع تصحيح.", score: 3 },
+      { id: "B", text: "تكرار يزيد الألفة.", score: 1 },
+      { id: "C", text: "تجربة ومراجعة.", score: 2 },
+      { id: "D", text: "قراءة أوسع.", score: 1 }
     ]
   },
   {
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
