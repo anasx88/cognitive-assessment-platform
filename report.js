@@ -1,4 +1,4 @@
-(function attachReport(root) {
+﻿(function attachReport(root) {
   function formatPercent(value) {
     return `${value}%`;
   }
@@ -64,7 +64,7 @@
   function createReportSummary(result) {
     return [
       `الدرجة العامة: ${formatPercent(result.scores.overall)}`,
-      `مؤشر الاتساق: ${formatPercent(result.consistencyIndex)}`,
+      `مؤشر اتساق الإجابات: ${formatPercent(result.consistencyIndex)}`,
       `المسار المقترح: ${result.recommendation.label}`
     ].join(" | ");
   }
@@ -165,7 +165,7 @@
         </div>
 
         <div class="report-section">
-          <h3>مؤشر الاتساق</h3>
+          <h3>مؤشر اتساق الإجابات</h3>
           <p>${formatPercent(result.consistencyIndex)}</p>
         </div>
 
@@ -209,3 +209,4 @@
     formatRiskFlags
   };
 })(typeof window !== "undefined" ? window : globalThis);
+

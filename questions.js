@@ -40,7 +40,7 @@ const AXIS_LABELS = {
   selfDevelopment: "تطوير الذات",
   digitalAiBasics: "الأساسيات الرقمية والذكاء الاصطناعي",
   aiInteraction: "التفاعل مع الذكاء الاصطناعي",
-  hiddenConsistency: "مؤشر الاتساق"
+  hiddenConsistency: "محور الاتساق الخفي"
 };
 
 const RISK_FLAG_LABELS = {
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
