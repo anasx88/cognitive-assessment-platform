@@ -746,11 +746,11 @@ const QUESTION_BANK = [
     questionType: "projection",
     consistencyGroup: "CG-APPLICATION-01",
     riskFlag: "highConsistencyConflict",
-    text: "شخص يقول: لا أطبق لأنني لم أفهم كل شيء بعد. ما تقييمك؟",
+    text: "شخص يقول: لا أطبق لأنني لم أفهم كل شيء بعد. ما التقييم الأقرب؟",
     options: [
-      { id: "A", text: "حريص ويريد الإتقان.", score: 1 },
-      { id: "B", text: "قد يتهرب من التطبيق باسم الفهم الكامل.", score: 3 },
-      { id: "C", text: "يحتاج شرحًا أكثر فقط.", score: 1 },
+      { id: "A", text: "قد يكون حريصًا على الإتقان، لكن عليه البدء بتطبيق صغير لاختبار الفهم.", score: 3 },
+      { id: "B", text: "حريص ويريد الإتقان.", score: 2 },
+      { id: "C", text: "قد يستخدم الفهم الكامل عذرًا لتجنب التطبيق.", score: 2 },
       { id: "D", text: "المجال لا يناسبه.", score: 0 }
     ]
   },
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
