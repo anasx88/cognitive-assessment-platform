@@ -12,7 +12,7 @@
     }
   },
   diagnostic: {
-    label: "الاختبار التشخيصي - نسخة تجريبية",
+    label: "الاختبار التشخيصي",
     totalQuestions: 160,
     quotas: {
       thinking: 30,
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
