@@ -291,13 +291,13 @@ const QUESTION_BANK = [
     axis: "thinking",
     subAxis: "assumptionTesting",
     questionType: "projection",
-    consistencyGroup: "CG-ASSUMPTION-01",
+    consistencyGroup: "CG-CONTEXT-01",
     riskFlag: "weakEvidenceThinking",
     text: "شخص يقول: هذه الطريقة نجحت في جهة أخرى، إذن ستنجح عندنا. ما تقييمك لتفكيره؟",
     options: [
-      { id: "A", text: "تفكيره ناقص لأنه لم يراجع اختلاف السياق.", score: 3 },
-      { id: "B", text: "تفكيره عملي ويختصر الوقت.", score: 1 },
-      { id: "C", text: "ربما صحيح إذا كانت الجهة الأخرى ناجحة.", score: 2 },
+      { id: "A", text: "قد تكون التجربة مفيدة كنقطة بداية، لكن نجاحها يحتاج فحص اختلاف السياق قبل نقلها.", score: 3 },
+      { id: "B", text: "تفكيره عملي ويختصر الوقت.", score: 2 },
+      { id: "C", text: "تفكيره ناقص لأنه لم يراجع اختلاف السياق.", score: 2 },
       { id: "D", text: "الأفضل تطبيقها فورًا ثم نرى النتيجة.", score: 0 }
     ]
   },
@@ -441,10 +441,10 @@ const QUESTION_BANK = [
     riskFlag: "avoidingApplication",
     text: "شخص يشتري دورات كثيرة ويشاهد المحتوى لكنه لا يطبق. ما التحليل الأقرب؟",
     options: [
-      { id: "A", text: "يحب التعلم وهذا يكفي كبداية.", score: 1 },
-      { id: "B", text: "قد يستخدم التعلم كبديل آمن عن التطبيق.", score: 3 },
-      { id: "C", text: "غير جاد غالبًا.", score: 0 },
-      { id: "D", text: "يحتاج دورة أطول وأكثر تفصيلًا.", score: 1 }
+      { id: "A", text: "قد يكون محبًا للتعلم، لكن كثرة الاستهلاك دون تطبيق قد تتحول إلى بديل آمن عن الممارسة.", score: 3 },
+      { id: "B", text: "يحب التعلم وهذا جانب إيجابي.", score: 2 },
+      { id: "C", text: "قد يستخدم التعلم كبديل آمن عن التطبيق.", score: 2 },
+      { id: "D", text: "غير جاد غالبًا.", score: 0 }
     ]
   },
   {
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
