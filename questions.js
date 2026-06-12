@@ -231,9 +231,9 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "عندما تسمع رأيًا قويًا من شخص مؤثر، ما التصرف الأقرب لك غالبًا؟",
     options: [
-      { id: "A", text: "أتحقق من الدليل والسياق قبل تبني الرأي.", score: 3 },
-      { id: "B", text: "أقبله مؤقتًا إذا كان صاحب خبرة.", score: 1 },
-      { id: "C", text: "أقارنه بتجارب ومصادر أخرى.", score: 2 },
+      { id: "A", text: "أفحص الدليل والسياق.", score: 3 },
+      { id: "B", text: "أقبل الرأي مؤقتًا.", score: 1 },
+      { id: "C", text: "أقارنه بتجارب أخرى.", score: 2 },
       { id: "D", text: "أطبقه إذا بدا مفيدًا.", score: 1 }
     ]
   },
@@ -311,10 +311,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "إذا وجدت معلومة تؤيد رأيك السابق بقوة، ما التصرف الأقرب للنضج؟",
     options: [
-      { id: "A", text: "أفحص أدلة معاكسة قبل اعتمادها.", score: 3 },
-      { id: "B", text: "أتعامل معها كدليل داعم.", score: 1 },
+      { id: "A", text: "أبحث عن دليل مخالف.", score: 3 },
+      { id: "B", text: "أعدها دليلًا داعمًا.", score: 1 },
       { id: "C", text: "أقارنها بمصادر أخرى.", score: 2 },
-      { id: "D", text: "أعرضها على شخص مختص.", score: 1 }
+      { id: "D", text: "أعرضها على مختص.", score: 1 }
     ]
   },
 
@@ -586,10 +586,10 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "لديك ملف يحتوي أسماء وأرقام موظفين وتريد استخدام AI لتحليله. ما التصرف الصحيح؟",
     options: [
-      { id: "A", text: "أزيل البيانات الحساسة قبل الاستخدام.", score: 3 },
-      { id: "B", text: "أستخدم عينة بعد مراجعة المحتوى.", score: 2 },
-      { id: "C", text: "أراجع سياسة الخصوصية أولًا.", score: 2 },
-      { id: "D", text: "أستخدم بيانات عامة للتجربة.", score: 1 }
+      { id: "A", text: "أزيل البيانات الحساسة.", score: 3 },
+      { id: "B", text: "أستخدم عينة مراجعة.", score: 2 },
+      { id: "C", text: "أراجع سياسة الخصوصية.", score: 2 },
+      { id: "D", text: "أستخدم بيانات عامة.", score: 1 }
     ]
   },
   {
@@ -619,7 +619,7 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "أي طلب أفضل للحصول على مخرج عملي من AI؟",
     options: [
-      { id: "A", text: "ابنِ خطة قصيرة مع تمارين وتقييم.", score: 3 },
+      { id: "A", text: "ابنِ خطة وتمارين وتقييم.", score: 3 },
       { id: "B", text: "اكتب خطة تطوير عامة.", score: 1 },
       { id: "C", text: "اقترح خطة قابلة للتنفيذ.", score: 2 },
       { id: "D", text: "اشرح الموضوع بشكل شامل.", score: 1 }
@@ -635,7 +635,7 @@ const QUESTION_BANK = [
     riskFlag: "jumpingToSolutions",
     text: "إذا أردت من AI تحليل مشكلة، ما الطلب الأفضل؟",
     options: [
-      { id: "A", text: "فرّق بين العرض والسبب قبل الحل.", score: 3 },
+      { id: "A", text: "حلل العرض والسبب.", score: 3 },
       { id: "B", text: "اقترح أسبابًا محتملة.", score: 2 },
       { id: "C", text: "اكتب تقريرًا مفصلًا.", score: 1 },
       { id: "D", text: "اعرض حلولًا مباشرة.", score: 1 }
@@ -651,10 +651,10 @@ const QUESTION_BANK = [
     riskFlag: "aiOverReliance",
     text: "إذا كتب لك AI تقريرًا يبدو ممتازًا، ما الخطوة التالية؟",
     options: [
-      { id: "A", text: "أراجعه منطقيًا وأتحقق من المعلومات.", score: 3 },
+      { id: "A", text: "أراجع المنطق والمعلومات.", score: 3 },
       { id: "B", text: "أطلب تحسين الأسلوب.", score: 1 },
-      { id: "C", text: "أطلب كشف الثغرات المحتملة.", score: 2 },
-      { id: "D", text: "أستخدمه بعد مراجعة سريعة.", score: 1 }
+      { id: "C", text: "أطلب كشف الثغرات.", score: 2 },
+      { id: "D", text: "أستخدمه بعد مراجعة.", score: 1 }
     ]
   },
   {
@@ -667,9 +667,9 @@ const QUESTION_BANK = [
     riskFlag: "avoidingApplication",
     text: "ما أفضل طريقة لاستخدام AI في تعلم مهارة جديدة؟",
     options: [
-      { id: "A", text: "يشرح ثم يختبرني ويصحح أخطائي.", score: 3 },
+      { id: "A", text: "يشرح ويختبرني ويصححني.", score: 3 },
       { id: "B", text: "يعطيني ملخصًا للمراجعة.", score: 1 },
-      { id: "C", text: "يقترح تمارين مناسبة للمستوى.", score: 2 },
+      { id: "C", text: "يقترح تمارين مناسبة.", score: 2 },
       { id: "D", text: "ينظم الدروس في خطة.", score: 1 }
     ]
   },
@@ -718,7 +718,7 @@ const QUESTION_BANK = [
     options: [
       { id: "A", text: "نعم غالبًا.", score: 2 },
       { id: "B", text: "أحيانًا.", score: 2 },
-      { id: "C", text: "حسب الهدف والنظام.", score: 3 },
+      { id: "C", text: "حسب النظام.", score: 3 },
       { id: "D", text: "بدرجة محدودة.", score: 1 }
     ]
   },
@@ -830,10 +830,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "شخص نقل تجربة ناجحة من شركة كبيرة إلى فريق صغير دون تعديل. ما تقييمك؟",
     options: [
-      { id: "A", text: "يحتاج تكييف التجربة حسب السياق.", score: 3 },
-      { id: "B", text: "نجاح التجربة مؤشر يستحق الاختبار.", score: 2 },
-      { id: "C", text: "النقل المباشر قد يسرّع التحسين.", score: 1 },
-      { id: "D", text: "يجربها ثم يقيس أثرها.", score: 2 }
+      { id: "A", text: "يحتاج تكييفًا للسياق.", score: 3 },
+      { id: "B", text: "نجاح التجربة مؤشر مفيد.", score: 2 },
+      { id: "C", text: "النقل المباشر قد يفيد.", score: 1 },
+      { id: "D", text: "يجربها ثم يقيسها.", score: 2 }
     ]
   },
   {
@@ -846,10 +846,10 @@ const QUESTION_BANK = [
     riskFlag: "lowSelfAwareness",
     text: "لديك قرار سريع ولا توجد كل المعلومات. ما التصرف الأقرب للنضج؟",
     options: [
-      { id: "A", text: "أحدد معلومات كافية لقرار قابل للمراجعة.", score: 3 },
-      { id: "B", text: "أنتظر معلومات إضافية عند الإمكان.", score: 1 },
-      { id: "C", text: "أستخدم الخبرة مع توضيح الافتراضات.", score: 2 },
-      { id: "D", text: "أعرض البدائل على صاحب القرار.", score: 1 }
+      { id: "A", text: "أحدد معلومات كافية.", score: 3 },
+      { id: "B", text: "أنتظر معلومات إضافية.", score: 1 },
+      { id: "C", text: "أوضح الافتراضات.", score: 2 },
+      { id: "D", text: "أعرض البدائل.", score: 1 }
     ]
   },
   {
@@ -1087,10 +1087,10 @@ const QUESTION_BANK = [
     riskFlag: "weakEvidenceThinking",
     text: "تظهر المشكلة في نهاية الأسبوع أكثر من بدايته. ما الفرضية الأولى التي تستحق الفحص؟",
     options: [
-      { id: "A", text: "تغير الطلب أو الموارد حسب اليوم.", score: 3 },
-      { id: "B", text: "انخفاض الحماس في نهاية الأسبوع.", score: 1 },
-      { id: "C", text: "اختلاف ضغط العمل بين الأيام.", score: 2 },
-      { id: "D", text: "الحاجة إلى تعميم خاص بالأسبوع.", score: 1 }
+      { id: "A", text: "تغير الطلب أو الموارد.", score: 3 },
+      { id: "B", text: "انخفاض الحماس آخر الأسبوع.", score: 1 },
+      { id: "C", text: "اختلاف ضغط العمل.", score: 2 },
+      { id: "D", text: "الحاجة إلى تعميم خاص.", score: 1 }
     ]
   },
   {
@@ -1217,10 +1217,10 @@ const QUESTION_BANK = [
     riskFlag: "highConsistencyConflict",
     text: "عندما تكون واثقًا من رأيك ثم تظهر معلومة تخالفه، ماذا تفعل غالبًا؟",
     options: [
-      { id: "A", text: "أراجع رأيي بناءً على قوة المعلومة.", score: 3 },
-      { id: "B", text: "أبحث عن تفسير يحافظ على رأيي.", score: 1 },
-      { id: "C", text: "أتجاهلها إذا كانت من مصدر لا أميل له.", score: 0 },
-      { id: "D", text: "أؤجل الحكم دون مراجعة.", score: 1 }
+      { id: "A", text: "أراجع الرأي بقوة المعلومة.", score: 3 },
+      { id: "B", text: "أبحث عن تفسير داعم.", score: 1 },
+      { id: "C", text: "أفحص مصدر المعلومة.", score: 2 },
+      { id: "D", text: "أؤجل الحكم مؤقتًا.", score: 1 }
     ]
   },
   {
@@ -2829,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
