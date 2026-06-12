@@ -1,26 +1,26 @@
 ﻿const TEST_MODE_CONFIG = {
   screening: {
     label: "اختبار الفرز - نسخة تجريبية",
-    totalQuestions: 36,
+    totalQuestions: 66,
     quotas: {
-      thinking: 6,
-      analysis: 6,
-      selfDevelopment: 6,
+      thinking: 16,
+      analysis: 16,
+      selfDevelopment: 11,
       digitalAiBasics: 6,
       aiInteraction: 6,
-      hiddenConsistency: 6
+      hiddenConsistency: 11
     }
   },
   diagnostic: {
     label: "الاختبار التشخيصي - نسخة تجريبية",
-    totalQuestions: 36,
+    totalQuestions: 66,
     quotas: {
-      thinking: 6,
-      analysis: 6,
-      selfDevelopment: 6,
+      thinking: 16,
+      analysis: 16,
+      selfDevelopment: 11,
       digitalAiBasics: 6,
       aiInteraction: 6,
-      hiddenConsistency: 6
+      hiddenConsistency: 11
     }
   }
 };
@@ -802,6 +802,491 @@ const QUESTION_BANK = [
       { id: "D", text: "أبدأ بجزء صغير ثم أعدل لاحقًا.", score: 2 }
     ]
   }
+
+,
+  {
+    id: "TH-007",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "logicalThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-LOGIC-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "إذا كانت نتيجة معينة حدثت بعد إجراء جديد، ما الاستنتاج الأقرب للنضج؟",
+    options: [
+      { id: "A", text: "الإجراء الجديد هو السبب مباشرة.", score: 1 },
+      { id: "B", text: "قد يكون الإجراء مؤثرًا، لكن أحتاج مقارنة قبل وبعد وعوامل أخرى.", score: 3 },
+      { id: "C", text: "النتيجة حدثت بالصدفة غالبًا.", score: 0 },
+      { id: "D", text: "أعتمد على رأي الفريق في تفسير العلاقة.", score: 1 }
+    ]
+  },
+  {
+    id: "TH-008",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "contextualThinking",
+    questionType: "projection",
+    consistencyGroup: "CG-CONTEXT-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "شخص نقل تجربة ناجحة من شركة كبيرة إلى فريق صغير دون تعديل. ما تقييمك؟",
+    options: [
+      { id: "A", text: "جيد؛ النجاح في مكان كبير يعني صلاحية التجربة.", score: 1 },
+      { id: "B", text: "غير مناسب دائمًا.", score: 0 },
+      { id: "C", text: "يحتاج تكييف التجربة حسب الحجم والموارد والسياق.", score: 3 },
+      { id: "D", text: "الأفضل تجربة الفكرة كما هي ثم التعديل لاحقًا.", score: 2 }
+    ]
+  },
+  {
+    id: "TH-009",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "decisionQuality",
+    questionType: "pressure",
+    consistencyGroup: "CG-DECISION-03",
+    riskFlag: "lowSelfAwareness",
+    text: "لديك قرار سريع ولا توجد كل المعلومات. ما التصرف الأقرب للنضج؟",
+    options: [
+      { id: "A", text: "أحدد أقل معلومات كافية لاتخاذ قرار قابل للمراجعة.", score: 3 },
+      { id: "B", text: "أؤجل القرار حتى تكتمل كل المعلومات.", score: 1 },
+      { id: "C", text: "أختار بناءً على الخبرة فقط.", score: 1 },
+      { id: "D", text: "أطلب من شخص آخر أن يقرر.", score: 0 }
+    ]
+  },
+  {
+    id: "TH-010",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "creativeThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-CREATIVE-01",
+    riskFlag: "jumpingToSolutions",
+    text: "عند طلب حل جديد لمشكلة قديمة، ما البداية الأفضل؟",
+    options: [
+      { id: "A", text: "أقترح أول فكرة مختلفة عن المعتاد.", score: 1 },
+      { id: "B", text: "أجمع أكبر عدد من الحلول الممكنة دون تقييم أولي.", score: 2 },
+      { id: "C", text: "أبحث عن أكثر حل منخفض التكلفة.", score: 1 },
+      { id: "D", text: "أعيد تعريف المشكلة والقيود ثم أفتح بدائل متعددة.", score: 3 }
+    ]
+  },
+  {
+    id: "TH-011",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "systemsThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-SYSTEM-02",
+    riskFlag: "blamingPeople",
+    text: "إذا تحسن الأداء عندما حضر المدير ثم انخفض بعد غيابه، ماذا يشير ذلك غالبًا؟",
+    options: [
+      { id: "A", text: "الفريق لا يعمل إلا تحت الضغط.", score: 1 },
+      { id: "B", text: "المدير هو السبب الوحيد للتحسن.", score: 0 },
+      { id: "C", text: "قد يكون النظام يعتمد على الرقابة الشخصية لا على آلية مستقرة.", score: 3 },
+      { id: "D", text: "يجب زيادة المتابعة اليومية.", score: 1 }
+    ]
+  },
+  {
+    id: "TH-012",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "biasAwareness",
+    questionType: "scenario",
+    consistencyGroup: "CG-BIAS-02",
+    riskFlag: "weakEvidenceThinking",
+    text: "إذا كنت لا تحب شخصًا ثم قدّم فكرة جيدة، ما التصرف الأقرب للنضج؟",
+    options: [
+      { id: "A", text: "أفصل الفكرة عن مشاعري تجاه الشخص وأقيّم الدليل.", score: 3 },
+      { id: "B", text: "أتعامل مع الفكرة بحذر لأنها منه.", score: 1 },
+      { id: "C", text: "أطلب أن يعرضها شخص آخر.", score: 1 },
+      { id: "D", text: "أرفضها حتى يثبت أنها صحيحة تمامًا.", score: 0 }
+    ]
+  },
+  {
+    id: "TH-013",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "strategicThinking",
+    questionType: "choice",
+    consistencyGroup: "CG-PRIORITY-01",
+    riskFlag: "lowSelfAwareness",
+    text: "عندما تتزاحم ثلاثة أهداف مهمة، ما معيار الترتيب الأقوى؟",
+    options: [
+      { id: "A", text: "الأكثر سهولة في التنفيذ.", score: 1 },
+      { id: "B", text: "الأكثر طلبًا من الآخرين.", score: 1 },
+      { id: "C", text: "الأعلى أثرًا والأقرب للهدف الرئيسي مع مراعاة المخاطر.", score: 3 },
+      { id: "D", text: "الأسرع في إعطاء نتيجة ظاهرة.", score: 2 }
+    ]
+  },
+  {
+    id: "TH-014",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "assumptionTesting",
+    questionType: "scenario",
+    consistencyGroup: "CG-ASSUMPTION-02",
+    riskFlag: "weakEvidenceThinking",
+    text: "إذا فشلت خطة رغم تنفيذها كما كُتبت، ما الاحتمال الذي يجب فحصه؟",
+    options: [
+      { id: "A", text: "الفريق لم يكن متحمسًا كفاية.", score: 1 },
+      { id: "B", text: "قد تكون فرضيات الخطة نفسها غير صحيحة.", score: 3 },
+      { id: "C", text: "الخطة تحتاج وقتًا أطول فقط.", score: 1 },
+      { id: "D", text: "يجب تغيير المسؤول عن التنفيذ.", score: 0 }
+    ]
+  },
+  {
+    id: "TH-015",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "criticalThinking",
+    questionType: "projection",
+    consistencyGroup: "CG-EVIDENCE-03",
+    riskFlag: "weakEvidenceThinking",
+    text: "شخص يثق في المعلومة لأنها منتشرة بين الناس. ما تقييمك؟",
+    options: [
+      { id: "A", text: "الانتشار دليل كافٍ غالبًا.", score: 0 },
+      { id: "B", text: "الانتشار يعطي مؤشرًا لكنه لا يغني عن الدليل.", score: 3 },
+      { id: "C", text: "المعلومة المنتشرة خاطئة غالبًا.", score: 1 },
+      { id: "D", text: "يكفي أن تكون من مصدر مشهور.", score: 1 }
+    ]
+  },
+  {
+    id: "TH-016",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "metacognition",
+    questionType: "selfAssessment",
+    consistencyGroup: "CG-SELF-AWARE-01",
+    riskFlag: "lowSelfAwareness",
+    text: "عندما تكتشف أنك فهمت موضوعًا بشكل خاطئ، ما التصرف الأقرب لك؟",
+    options: [
+      { id: "A", text: "أصحح الفكرة وأراجع كيف وصلت للفهم الخاطئ.", score: 3 },
+      { id: "B", text: "أصحح المعلومة فقط وأكمل.", score: 2 },
+      { id: "C", text: "أبرر الخطأ بسبب نقص الشرح.", score: 1 },
+      { id: "D", text: "أتجنب الحديث عن الموضوع.", score: 0 }
+    ]
+  },
+
+  {
+    id: "AN-007",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "problemDefinition",
+    questionType: "scenario",
+    consistencyGroup: "CG-PROBLEM-02",
+    riskFlag: "jumpingToSolutions",
+    text: "وصلتك شكوى تقول: الخدمة بطيئة. ما الصياغة التحليلية الأفضل كبداية؟",
+    options: [
+      { id: "A", text: "الخدمة تحتاج تحسينًا شاملًا.", score: 1 },
+      { id: "B", text: "يجب معرفة أين يحدث البطء، وكم مدته، ومتى يتكرر.", score: 3 },
+      { id: "C", text: "الموظفون يحتاجون تدريبًا.", score: 0 },
+      { id: "D", text: "النظام الإلكتروني هو السبب غالبًا.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-008",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "rootCause",
+    questionType: "scenario",
+    consistencyGroup: "CG-ROOT-02",
+    riskFlag: "jumpingToSolutions",
+    text: "إذا اختفت المشكلة مؤقتًا بعد تدخل مباشر ثم عادت، ماذا يعني ذلك غالبًا؟",
+    options: [
+      { id: "A", text: "التدخل لم يعالج السبب الجذري.", score: 3 },
+      { id: "B", text: "الفريق لم يلتزم.", score: 1 },
+      { id: "C", text: "المشكلة طبيعية ولا يمكن حلها.", score: 0 },
+      { id: "D", text: "نحتاج تدخلًا مباشرًا كل مرة.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-009",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "stakeholderAnalysis",
+    questionType: "scenario",
+    consistencyGroup: "CG-STAKEHOLDER-02",
+    riskFlag: "blamingPeople",
+    text: "تغير إجراء داخلي وبدأت إدارة أخرى تتأخر في الرد. ما أول زاوية تحليل؟",
+    options: [
+      { id: "A", text: "الإدارة الأخرى غير متعاونة.", score: 0 },
+      { id: "B", text: "نرفع الموضوع للمدير مباشرة.", score: 1 },
+      { id: "C", text: "نراجع كيف أثر التغيير على عبء العمل والمسؤوليات ونقاط التسليم.", score: 3 },
+      { id: "D", text: "نطلب منهم الالتزام بالمدة السابقة.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-010",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "dataThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-DATA-02",
+    riskFlag: "weakEvidenceThinking",
+    text: "لديك متوسط زمن إنجاز جيد، لكن بعض الحالات تتأخر جدًا. ما التحليل الأقوى؟",
+    options: [
+      { id: "A", text: "المتوسط كافٍ للحكم على الأداء.", score: 1 },
+      { id: "B", text: "أفحص التباين والحالات المتطرفة لا المتوسط فقط.", score: 3 },
+      { id: "C", text: "أتجاهل الحالات المتطرفة لأنها قليلة.", score: 0 },
+      { id: "D", text: "أزيد عدد الموظفين احتياطًا.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-011",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "evidenceEvaluation",
+    questionType: "projection",
+    consistencyGroup: "CG-EVIDENCE-04",
+    riskFlag: "weakEvidenceThinking",
+    text: "شخص يقول: لدي إحساس أن السبب معروف. ما تقييمك؟",
+    options: [
+      { id: "A", text: "الإحساس قد يوجه السؤال لكنه لا يكفي كدليل.", score: 3 },
+      { id: "B", text: "الإحساس مهم ويكفي إذا كان الشخص خبيرًا.", score: 1 },
+      { id: "C", text: "الإحساس لا قيمة له إطلاقًا.", score: 1 },
+      { id: "D", text: "نبدأ بالحل الذي يقترحه الإحساس.", score: 0 }
+    ]
+  },
+  {
+    id: "AN-012",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "riskAnalysis",
+    questionType: "scenario",
+    consistencyGroup: "CG-RISK-01",
+    riskFlag: "jumpingToSolutions",
+    text: "عند اقتراح حل جديد، ما السؤال التحليلي الذي يجب طرحه مبكرًا؟",
+    options: [
+      { id: "A", text: "هل الحل يبدو مقنعًا؟", score: 1 },
+      { id: "B", text: "من صاحب فكرة الحل؟", score: 0 },
+      { id: "C", text: "ما المخاطر والآثار الجانبية إذا طبقناه؟", score: 3 },
+      { id: "D", text: "هل سيعجب الفريق؟", score: 1 }
+    ]
+  },
+  {
+    id: "AN-013",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "processAnalysis",
+    questionType: "scenario",
+    consistencyGroup: "CG-PROCESS-01",
+    riskFlag: "jumpingToSolutions",
+    text: "إذا أردت تحليل تأخر معاملة، ما أفضل تمثيل أولي؟",
+    options: [
+      { id: "A", text: "رسم خطوات المسار من البداية للنهاية وتحديد زمن كل خطوة.", score: 3 },
+      { id: "B", text: "كتابة أسماء الموظفين المسؤولين.", score: 1 },
+      { id: "C", text: "سؤال المستفيد عن رأيه فقط.", score: 1 },
+      { id: "D", text: "اقتراح اختصار الإجراء مباشرة.", score: 0 }
+    ]
+  },
+  {
+    id: "AN-014",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "patternRecognition",
+    questionType: "scenario",
+    consistencyGroup: "CG-PATTERN-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "تظهر المشكلة في نهاية الأسبوع أكثر من بدايته. ما الفرضية الأولى التي تستحق الفحص؟",
+    options: [
+      { id: "A", text: "ضعف الحماس في نهاية الأسبوع.", score: 1 },
+      { id: "B", text: "تغير حجم الطلبات أو الموارد أو المراجعات حسب اليوم.", score: 3 },
+      { id: "C", text: "المشكلة صدفة.", score: 0 },
+      { id: "D", text: "نحتاج تعميمًا خاصًا بنهاية الأسبوع.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-015",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "decisionAnalysis",
+    questionType: "pressure",
+    consistencyGroup: "CG-DECISION-04",
+    riskFlag: "lowSelfAwareness",
+    text: "إذا تعارض حل منخفض التكلفة مع حل أعلى أثرًا لكنه أصعب، ما القرار التحليلي؟",
+    options: [
+      { id: "A", text: "أختار الأقل تكلفة دائمًا.", score: 1 },
+      { id: "B", text: "أختار الأعلى أثرًا دون نقاش.", score: 1 },
+      { id: "C", text: "أقارن التكلفة والأثر والمخاطر وقابلية التنفيذ.", score: 3 },
+      { id: "D", text: "أطلب من الإدارة الاختيار.", score: 0 }
+    ]
+  },
+  {
+    id: "AN-016",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "hypothesisTesting",
+    questionType: "scenario",
+    consistencyGroup: "CG-HYPOTHESIS-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "وضعت فرضية لسبب المشكلة. ما الخطوة التالية؟",
+    options: [
+      { id: "A", text: "أبحث عن بيانات أو تجربة صغيرة تؤكدها أو تنفيها.", score: 3 },
+      { id: "B", text: "أبني الحل عليها مباشرة.", score: 0 },
+      { id: "C", text: "أعرضها في اجتماع لمعرفة الانطباع.", score: 1 },
+      { id: "D", text: "أبحث فقط عما يدعمها.", score: 0 }
+    ]
+  },
+
+  {
+    id: "SD-007",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "learningAgility",
+    questionType: "scenario",
+    consistencyGroup: "CG-LEARNING-01",
+    riskFlag: "avoidingApplication",
+    text: "عندما لا تفهم درسًا من أول مرة، ما التصرف الأقرب للنضج؟",
+    options: [
+      { id: "A", text: "أبحث عن شرح مختلف ثم أطبّق تمرينًا صغيرًا.", score: 3 },
+      { id: "B", text: "أعيد مشاهدة الدرس كاملًا عدة مرات فقط.", score: 1 },
+      { id: "C", text: "أتركه لأنه لا يناسبني.", score: 0 },
+      { id: "D", text: "أنتقل للدرس التالي حتى لا أتأخر.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-008",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "feedbackUse",
+    questionType: "scenario",
+    consistencyGroup: "CG-FEEDBACK-02",
+    riskFlag: "lowSelfAwareness",
+    text: "إذا تكرر نفس النقد من أكثر من شخص، ما القراءة الأقرب؟",
+    options: [
+      { id: "A", text: "قد يكون هناك نمط حقيقي يحتاج مراجعة.", score: 3 },
+      { id: "B", text: "الناس غالبًا لا يفهمون طريقتي.", score: 0 },
+      { id: "C", text: "أحتاج شخصًا يدافع عن وجهة نظري.", score: 0 },
+      { id: "D", text: "أنتظر نقدًا من شخص خبير فقط.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-009",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "motivationManagement",
+    questionType: "scenario",
+    consistencyGroup: "CG-MOTIVATION-01",
+    riskFlag: "avoidingApplication",
+    text: "إذا اختفى الحماس بعد البداية، ما التصرف الأكثر فاعلية؟",
+    options: [
+      { id: "A", text: "أبحث عن محتوى تحفيزي جديد.", score: 1 },
+      { id: "B", text: "أخفض حجم المهمة وأثبت وقتًا قصيرًا للتطبيق.", score: 3 },
+      { id: "C", text: "أوقف المسار حتى يعود الحماس.", score: 0 },
+      { id: "D", text: "أجبر نفسي على خطة كبيرة لتعويض الضعف.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-010",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "selfAwareness",
+    questionType: "selfAssessment",
+    consistencyGroup: "CG-SELF-AWARE-02",
+    riskFlag: "lowSelfAwareness",
+    text: "عندما يتكرر تعثرك في هدف معين، ما السؤال الأهم؟",
+    options: [
+      { id: "A", text: "لماذا لا أملك إرادة كافية؟", score: 0 },
+      { id: "B", text: "ما النمط أو الظرف الذي يسبق التعثر عادة؟", score: 3 },
+      { id: "C", text: "من يستطيع إلزامي؟", score: 1 },
+      { id: "D", text: "هل أترك الهدف وأبدأ غيره؟", score: 1 }
+    ]
+  },
+  {
+    id: "SD-011",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "application",
+    questionType: "pressure",
+    consistencyGroup: "CG-APPLICATION-02",
+    riskFlag: "avoidingApplication",
+    text: "بعد تعلم مفهوم جديد، ما أفضل دليل أنك فهمته؟",
+    options: [
+      { id: "A", text: "أستطيع تكرار التعريف.", score: 1 },
+      { id: "B", text: "أستطيع تلخيصه بكلامي.", score: 2 },
+      { id: "C", text: "أستطيع تطبيقه على مثال جديد وشرح سبب التطبيق.", score: 3 },
+      { id: "D", text: "أشعر أنني فهمته.", score: 0 }
+    ]
+  },
+
+  {
+    id: "HC-007",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "judgmentAlignment",
+    questionType: "selfReport",
+    consistencyGroup: "CG-SELF-AWARE-01",
+    riskFlag: "highConsistencyConflict",
+    text: "عندما تكون واثقًا من رأيك ثم تظهر معلومة تخالفه، ماذا تفعل غالبًا؟",
+    options: [
+      { id: "A", text: "أراجع رأيي بناءً على قوة المعلومة.", score: 3 },
+      { id: "B", text: "أبحث عن تفسير يحافظ على رأيي.", score: 1 },
+      { id: "C", text: "أتجاهلها إذا كانت من مصدر لا أميل له.", score: 0 },
+      { id: "D", text: "أؤجل الحكم دون مراجعة.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-008",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "responseStability",
+    questionType: "projection",
+    consistencyGroup: "CG-FEEDBACK-02",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص يرفض النقد المتكرر بحجة أن الناس لا يفهمونه. ما تقييمك؟",
+    options: [
+      { id: "A", text: "قد يكون لديه ضعف في استخدام التغذية الراجعة.", score: 3 },
+      { id: "B", text: "قد يكون صحيحًا لأن الناس لا يفهمون دائمًا.", score: 1 },
+      { id: "C", text: "الأفضل أن يتجاهل النقد حتى يأتي من خبير.", score: 0 },
+      { id: "D", text: "يحتاج فقط إلى ثقة أكبر بنفسه.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-009",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "pressureBehavior",
+    questionType: "pressure",
+    consistencyGroup: "CG-RISK-01",
+    riskFlag: "highConsistencyConflict",
+    text: "لديك حل يبدو جيدًا لكنك لم تفحص مخاطره، والوقت ضيق. ماذا تفعل؟",
+    options: [
+      { id: "A", text: "أطبقه لأن الوقت لا يسمح.", score: 0 },
+      { id: "B", text: "أفحص خطرين رئيسيين على الأقل قبل التوصية.", score: 3 },
+      { id: "C", text: "أطلب موافقة الإدارة وأترك المسؤولية لها.", score: 1 },
+      { id: "D", text: "أؤجل كل شيء حتى أعمل تحليلًا كاملًا.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-010",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "consistencyProbe",
+    questionType: "selfReport",
+    consistencyGroup: "CG-MOTIVATION-01",
+    riskFlag: "highConsistencyConflict",
+    text: "ما الذي تعتمد عليه أكثر للاستمرار في التعلم؟",
+    options: [
+      { id: "A", text: "الحماس والرغبة.", score: 1 },
+      { id: "B", text: "نظام بسيط ومتكرر حتى عند ضعف الحماس.", score: 3 },
+      { id: "C", text: "وجود دورة قوية.", score: 1 },
+      { id: "D", text: "وقت فراغ كافٍ.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-011",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "judgmentAlignment",
+    questionType: "projection",
+    consistencyGroup: "CG-HYPOTHESIS-01",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص وضع فرضية ثم جمع فقط ما يؤيدها. ما تقييمك؟",
+    options: [
+      { id: "A", text: "هذا طبيعي إذا كانت الفرضية قوية.", score: 1 },
+      { id: "B", text: "هذا تحيز تأكيدي ويضعف جودة التحليل.", score: 3 },
+      { id: "C", text: "الأفضل أن يبدأ بالحل مباشرة.", score: 0 },
+      { id: "D", text: "يكفي أن يعرضها على فريقه.", score: 1 }
+    ]
+  }
 ];
 
 if (typeof window !== "undefined") {
@@ -821,4 +1306,5 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
