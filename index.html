@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>منصة تقييم الجاهزية المعرفية والذكاء الاصطناعي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-screen="start">
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Cognitive & AI Readiness Assessment Platform</p>
+      <h1>منصة تقييم الجاهزية المعرفية والذكاء الاصطناعي</h1>
+    </div>
+    <span class="header-mark">RTL</span>
+  </header>
+
+  <main>
+    <section class="screen screen-start" aria-labelledby="startTitle">
+      <div class="intro">
+        <p class="eyebrow">تقييم تدريبي تنفيذي</p>
+        <h2 id="startTitle">ابدأ التقييم</h2>
+        <p>
+          سيظهر سؤال واحد في كل شاشة. لا يتم عرض محاور التقييم أثناء الإجابة، ويتم ترتيب الأسئلة والخيارات عشوائيا.
+        </p>
+      </div>
+
+      <aside id="resumePanel" class="notice resume-panel" hidden>
+        <p>يوجد تقدم محفوظ لهذا المتصفح: <strong></strong></p>
+        <div class="button-row">
+          <button type="button" id="resumeButton" class="secondary-button">استئناف</button>
+          <button type="button" id="discardResumeButton" class="ghost-button">بدء جديد</button>
+        </div>
+      </aside>
+
+      <form id="startForm" class="form-panel">
+        <div class="field">
+          <label for="participantName">اسم المشارك</label>
+          <input id="participantName" name="participantName" type="text" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="batchCode">رمز المجموعة</label>
+          <input id="batchCode" name="batchCode" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="email">البريد الإلكتروني <span>اختياري</span></label>
+          <input id="email" name="email" type="email" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="testType">نوع الاختبار</label>
+          <select id="testType" name="testType">
+            <option value="screening">اختبار الفرز - 80 سؤالا</option>
+            <option value="diagnostic">الاختبار التشخيصي - 160 سؤالا</option>
+          </select>
+        </div>
+
+        <p id="formError" class="error-message" role="alert"></p>
+
+        <button type="submit" class="primary-button">بدء الاختبار</button>
+      </form>
+    </section>
+
+    <section class="screen screen-assessment" aria-labelledby="questionText">
+      <div class="assessment-shell">
+        <div class="assessment-top">
+          <div>
+            <p id="progressText">السؤال 1 من 80</p>
+            <strong id="answeredText">0 إجابة مكتملة</strong>
+          </div>
+          <button type="button" id="startOverButton" class="ghost-button">بدء من جديد</button>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <div id="progressBar"></div>
+        </div>
+
+        <article class="question-panel">
+          <h2 id="questionText"></h2>
+          <div id="optionList" class="option-list"></div>
+          <p id="missingNotice" class="notice compact" hidden>
+            يجب إكمال جميع الأسئلة قبل تسليم النتيجة النهائية.
+          </p>
+        </article>
+
+        <div class="navigation-row">
+          <button type="button" id="prevButton" class="secondary-button">السابق</button>
+          <button type="button" id="nextButton" class="primary-button">التالي</button>
+          <button type="button" id="finishButton" class="primary-button" hidden>إنهاء الاختبار</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen screen-report" aria-labelledby="reportTitle">
+      <div class="report-actions">
+        <div>
+          <p class="eyebrow">التقرير النهائي</p>
+          <h2 id="reportTitle">النتيجة والتوصية</h2>
+        </div>
+        <div class="button-row">
+          <button type="button" id="printButton" class="secondary-button">طباعة / حفظ PDF</button>
+          <button type="button" id="downloadButton" class="secondary-button">تنزيل JSON</button>
+          <button type="button" id="newAssessmentButton" class="ghost-button">اختبار جديد</button>
+        </div>
+      </div>
+
+      <p id="cloudSuccess" class="notice success" hidden>تم حفظ النتيجة في Google Sheets.</p>
+      <p id="cloudWarning" class="notice warning" hidden></p>
+      <div id="reportContainer"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="questions.js"></script>
+  <script src="scoring.js"></script>
+  <script src="report.js"></script>
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
