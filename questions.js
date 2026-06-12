@@ -1,26 +1,26 @@
 ﻿const TEST_MODE_CONFIG = {
   screening: {
     label: "اختبار الفرز - نسخة تجريبية",
-    totalQuestions: 130,
+    totalQuestions: 160,
     quotas: {
-      thinking: 23,
-      analysis: 23,
-      selfDevelopment: 24,
-      digitalAiBasics: 18,
-      aiInteraction: 18,
-      hiddenConsistency: 24
+      thinking: 30,
+      analysis: 30,
+      selfDevelopment: 30,
+      digitalAiBasics: 20,
+      aiInteraction: 20,
+      hiddenConsistency: 30
     }
   },
   diagnostic: {
     label: "الاختبار التشخيصي - نسخة تجريبية",
-    totalQuestions: 130,
+    totalQuestions: 160,
     quotas: {
-      thinking: 23,
-      analysis: 23,
-      selfDevelopment: 24,
-      digitalAiBasics: 18,
-      aiInteraction: 18,
-      hiddenConsistency: 24
+      thinking: 30,
+      analysis: 30,
+      selfDevelopment: 30,
+      digitalAiBasics: 20,
+      aiInteraction: 20,
+      hiddenConsistency: 30
     }
   }
 };
@@ -2323,6 +2323,493 @@ const QUESTION_BANK = [
       { id: "D", text: "أستخدمها مع عبارة حسب ما ورد.", score: 1 }
     ]
   }
+
+,
+  {
+    id: "TH-024",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "argumentEvaluation",
+    questionType: "scenario",
+    consistencyGroup: "CG-ARGUMENT-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "إذا كان كلام شخص مرتبًا وجذابًا لكنه بلا دليل، ما الموقف الأقرب للتفكير الناضج؟",
+    options: [
+      { id: "A", text: "أقبل الكلام لأن ترتيبه يدل على فهم.", score: 1 },
+      { id: "B", text: "أميز بين جمال العرض وقوة الدليل قبل الحكم.", score: 3 },
+      { id: "C", text: "أرفض الكلام فورًا لأنه بلا دليل.", score: 1 },
+      { id: "D", text: "أعتمد على انطباعي من المتحدث.", score: 0 }
+    ]
+  },
+  {
+    id: "TH-025",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "tradeOffThinking",
+    questionType: "choice",
+    consistencyGroup: "CG-TRADEOFF-01",
+    riskFlag: "lowSelfAwareness",
+    text: "عندما يكون لكل خيار مكسب وخسارة، ما طريقة التفكير الأفضل؟",
+    options: [
+      { id: "A", text: "اختيار الخيار الذي له مكاسب أكثر ظاهريًا.", score: 1 },
+      { id: "B", text: "تحديد المفاضلات وما الذي أقبل خسارته مقابل الهدف.", score: 3 },
+      { id: "C", text: "تجنب القرار حتى يظهر خيار بلا خسائر.", score: 0 },
+      { id: "D", text: "اختيار ما يفضله أغلب الناس.", score: 1 }
+    ]
+  },
+  {
+    id: "TH-026",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "learningThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-LEARNING-THINK-01",
+    riskFlag: "avoidingApplication",
+    text: "عند تعلم مفهوم جديد، ما السؤال الذي يكشف فهمًا أعمق؟",
+    options: [
+      { id: "A", text: "ما تعريفه؟", score: 1 },
+      { id: "B", text: "متى ينطبق ومتى لا ينطبق؟", score: 3 },
+      { id: "C", text: "كم يستغرق حفظه؟", score: 0 },
+      { id: "D", text: "من قال هذا المفهوم؟", score: 1 }
+    ]
+  },
+  {
+    id: "TH-027",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "errorThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-ERROR-01",
+    riskFlag: "lowSelfAwareness",
+    text: "عندما يثبت أن قرارًا سابقًا كان خاطئًا، ما الاستجابة الأقرب للنضج؟",
+    options: [
+      { id: "A", text: "أبرر القرار لأنه كان مناسبًا في وقته دون مراجعة.", score: 1 },
+      { id: "B", text: "أراجع المعلومات والافتراضات التي قادت للقرار.", score: 3 },
+      { id: "C", text: "أبحث عمن تسبب في الخطأ.", score: 0 },
+      { id: "D", text: "أتجنب اتخاذ قرارات مشابهة لاحقًا.", score: 1 }
+    ]
+  },
+  {
+    id: "TH-028",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "abstraction",
+    questionType: "projection",
+    consistencyGroup: "CG-ABSTRACTION-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "شخص يحفظ أمثلة كثيرة لكنه لا يستطيع استخراج القاعدة منها. ما الفجوة الأقرب؟",
+    options: [
+      { id: "A", text: "لديه معرفة متفرقة دون تجريد النمط أو القاعدة.", score: 3 },
+      { id: "B", text: "يحتاج أمثلة أكثر فقط.", score: 1 },
+      { id: "C", text: "لا يناسبه التعلم العملي.", score: 0 },
+      { id: "D", text: "يفهم جيدًا ما دام يحفظ الأمثلة.", score: 1 }
+    ]
+  },
+  {
+    id: "TH-029",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "independentThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-INDEPENDENT-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "إذا وافق أغلب الحضور على رأي لا تراه مدعومًا بدليل كافٍ، ماذا تفعل؟",
+    options: [
+      { id: "A", text: "أوافق حتى لا أعطل المجموعة.", score: 0 },
+      { id: "B", text: "أطرح سؤالًا عن الدليل أو الافتراض دون تصعيد.", score: 3 },
+      { id: "C", text: "أرفض الرأي علنًا مباشرة.", score: 1 },
+      { id: "D", text: "أمتنع عن المشاركة.", score: 1 }
+    ]
+  },
+  {
+    id: "TH-030",
+    mode: ["screening", "diagnostic"],
+    axis: "thinking",
+    subAxis: "synthesisThinking",
+    questionType: "scenario",
+    consistencyGroup: "CG-SYNTHESIS-01",
+    riskFlag: "lowSelfAwareness",
+    text: "عندما تكون لديك معلومات كثيرة ومتفرقة، ما الخطوة التي تحولها إلى فهم؟",
+    options: [
+      { id: "A", text: "أجمع المزيد من المعلومات.", score: 1 },
+      { id: "B", text: "أرتبها في أنماط وعلاقات واستنتاجات قابلة للاختبار.", score: 3 },
+      { id: "C", text: "أحفظ أهم النقاط كما هي.", score: 1 },
+      { id: "D", text: "أطلب ملخصًا سريعًا فقط.", score: 0 }
+    ]
+  },
+
+  {
+    id: "AN-024",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "baselineAnalysis",
+    questionType: "scenario",
+    consistencyGroup: "CG-BASELINE-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "قبل الحكم أن الأداء تحسن، ما الشيء الذي يجب توفره؟",
+    options: [
+      { id: "A", text: "انطباع عام أن الوضع أفضل.", score: 0 },
+      { id: "B", text: "خط أساس واضح للمقارنة قبل وبعد.", score: 3 },
+      { id: "C", text: "رضا الفريق عن التحسن.", score: 1 },
+      { id: "D", text: "تقرير طويل يشرح الجهود.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-025",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "segmentation",
+    questionType: "scenario",
+    consistencyGroup: "CG-SEGMENT-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "إذا كان رضا المستفيدين منخفضًا، ما التحليل الأقوى من مجرد المتوسط العام؟",
+    options: [
+      { id: "A", text: "تقسيم الرضا حسب نوع الخدمة أو الفئة أو نقطة التماس.", score: 3 },
+      { id: "B", text: "إعلان أن الرضا منخفض فقط.", score: 1 },
+      { id: "C", text: "تدريب جميع الموظفين فورًا.", score: 0 },
+      { id: "D", text: "تجاهل الفئات الصغيرة.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-026",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "countermeasure",
+    questionType: "scenario",
+    consistencyGroup: "CG-COUNTERMEASURE-01",
+    riskFlag: "jumpingToSolutions",
+    text: "ما الفرق بين حل مؤقت وحل جذري في معالجة مشكلة؟",
+    options: [
+      { id: "A", text: "الحل المؤقت يخفف الأثر، والجذري يعالج السبب أو يمنع التكرار.", score: 3 },
+      { id: "B", text: "لا فرق إذا انتهت المشكلة مؤقتًا.", score: 0 },
+      { id: "C", text: "الحل الجذري دائمًا أسرع.", score: 0 },
+      { id: "D", text: "الحل المؤقت أفضل لأنه أسهل.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-027",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "causalChain",
+    questionType: "scenario",
+    consistencyGroup: "CG-CAUSE-CHAIN-01",
+    riskFlag: "jumpingToSolutions",
+    text: "عند وجود سبب مباشر وسبب أعمق، ما الأفضل في التحليل؟",
+    options: [
+      { id: "A", text: "الاكتفاء بالسبب المباشر لأنه واضح.", score: 1 },
+      { id: "B", text: "تتبع سلسلة الأسباب حتى نصل لسبب قابل للمعالجة.", score: 3 },
+      { id: "C", text: "تجاوز الأسباب والانتقال للحلول.", score: 0 },
+      { id: "D", text: "اختيار السبب الذي يتفق عليه الجميع.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-028",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "measurementDesign",
+    questionType: "choice",
+    consistencyGroup: "CG-MEASURE-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "إذا أردت قياس أثر تدريب، ما القياس الأقوى؟",
+    options: [
+      { id: "A", text: "عدد الحضور فقط.", score: 1 },
+      { id: "B", text: "رضا المتدربين فقط.", score: 1 },
+      { id: "C", text: "تغير السلوك أو الأداء بعد التدريب مقارنة بخط أساس.", score: 3 },
+      { id: "D", text: "عدد الشرائح المستخدمة.", score: 0 }
+    ]
+  },
+  {
+    id: "AN-029",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "confoundingFactors",
+    questionType: "scenario",
+    consistencyGroup: "CG-CONFOUNDING-01",
+    riskFlag: "weakEvidenceThinking",
+    text: "تحسنت النتائج بعد مبادرة جديدة. ما الخطر التحليلي؟",
+    options: [
+      { id: "A", text: "نسبة التحسن قد تكون بسبب عوامل أخرى لم نفحصها.", score: 3 },
+      { id: "B", text: "المبادرة هي السبب المؤكد.", score: 0 },
+      { id: "C", text: "لا حاجة للفحص إذا كانت النتيجة جيدة.", score: 0 },
+      { id: "D", text: "نوقف كل المبادرات الأخرى.", score: 1 }
+    ]
+  },
+  {
+    id: "AN-030",
+    mode: ["screening", "diagnostic"],
+    axis: "analysis",
+    subAxis: "recommendationQuality",
+    questionType: "scenario",
+    consistencyGroup: "CG-RECOMMENDATION-01",
+    riskFlag: "jumpingToSolutions",
+    text: "ما شكل التوصية التحليلية الجيدة؟",
+    options: [
+      { id: "A", text: "حل واضح دون تفاصيل كثيرة.", score: 1 },
+      { id: "B", text: "توصية مرتبطة بسبب محدد، مع أثر متوقع ومخاطر وخطوة تنفيذ.", score: 3 },
+      { id: "C", text: "اقتراح عام للتحسين.", score: 0 },
+      { id: "D", text: "رأي خبير مكتوب بلغة قوية.", score: 1 }
+    ]
+  },
+
+  {
+    id: "SD-025",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "deliberatePractice",
+    questionType: "scenario",
+    consistencyGroup: "CG-PRACTICE-01",
+    riskFlag: "avoidingApplication",
+    text: "ما الذي يجعل التدريب على مهارة فعّالًا؟",
+    options: [
+      { id: "A", text: "تكرار عشوائي لمدة طويلة.", score: 1 },
+      { id: "B", text: "تطبيق متعمد على نقطة ضعف محددة مع تغذية راجعة.", score: 3 },
+      { id: "C", text: "قراءة أكثر عن المهارة.", score: 1 },
+      { id: "D", text: "مشاهدة خبير يؤديها فقط.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-026",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "environmentDesign",
+    questionType: "scenario",
+    consistencyGroup: "CG-ENVIRONMENT-01",
+    riskFlag: "avoidingApplication",
+    text: "إذا كان التشتت يمنعك من التعلم، ما الحل الأقوى؟",
+    options: [
+      { id: "A", text: "الاعتماد على الإرادة فقط.", score: 0 },
+      { id: "B", text: "تعديل البيئة: وقت محدد، إبعاد المشتتات، وتجهيز أدوات التعلم.", score: 3 },
+      { id: "C", text: "تأجيل التعلم حتى تنتهي كل المشتتات.", score: 1 },
+      { id: "D", text: "تغيير الهدف.", score: 0 }
+    ]
+  },
+  {
+    id: "SD-027",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "failureLearning",
+    questionType: "scenario",
+    consistencyGroup: "CG-FAILURE-01",
+    riskFlag: "lowSelfAwareness",
+    text: "ما أفضل استخدام للفشل في مسار التعلم؟",
+    options: [
+      { id: "A", text: "اعتباره بيانات تكشف ما يحتاج تعديلًا.", score: 3 },
+      { id: "B", text: "اعتباره دليلًا على ضعف القدرة.", score: 0 },
+      { id: "C", text: "تجاهله حتى لا يؤثر على الحماس.", score: 1 },
+      { id: "D", text: "تعويضه بضغط أكبر دائمًا.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-028",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "consistency",
+    questionType: "scenario",
+    consistencyGroup: "CG-CONSISTENCY-01",
+    riskFlag: "avoidingApplication",
+    text: "ما السلوك الأقرب لبناء مهارة خلال 3 أشهر؟",
+    options: [
+      { id: "A", text: "دفعات حماس كبيرة ثم توقف.", score: 0 },
+      { id: "B", text: "تطبيق قصير منتظم مع مراجعة أسبوعية.", score: 3 },
+      { id: "C", text: "قراءة طويلة دون تطبيق.", score: 1 },
+      { id: "D", text: "انتظار الوقت المثالي.", score: 0 }
+    ]
+  },
+  {
+    id: "SD-029",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "helpSeeking",
+    questionType: "scenario",
+    consistencyGroup: "CG-HELP-01",
+    riskFlag: "lowSelfAwareness",
+    text: "متى يكون طلب المساعدة علامة نضج؟",
+    options: [
+      { id: "A", text: "عندما أحدد ما جربته وما الذي تعطل وما السؤال المطلوب.", score: 3 },
+      { id: "B", text: "عندما أطلب من الآخر إنجاز المهمة بدلًا عني.", score: 0 },
+      { id: "C", text: "عندما أطلب شرحًا عامًا بلا محاولة.", score: 1 },
+      { id: "D", text: "عندما أريد اختصار كل التعلم.", score: 0 }
+    ]
+  },
+  {
+    id: "SD-030",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "masteryMindset",
+    questionType: "choice",
+    consistencyGroup: "CG-MASTERY-01",
+    riskFlag: "lowSelfAwareness",
+    text: "ما الفرق بين إنهاء دورة وإتقان مهارة؟",
+    options: [
+      { id: "A", text: "لا فرق؛ إنهاء الدورة يعني الإتقان.", score: 0 },
+      { id: "B", text: "الدورة تعرض المعرفة، والإتقان يظهر في التطبيق المتكرر بجودة متحسنة.", score: 3 },
+      { id: "C", text: "الإتقان يعني حفظ كل الدروس.", score: 1 },
+      { id: "D", text: "إنهاء الدورة أهم من التطبيق.", score: 0 }
+    ]
+  },
+
+  {
+    id: "DA-019",
+    mode: ["screening", "diagnostic"],
+    axis: "digitalAiBasics",
+    subAxis: "basicTroubleshooting",
+    questionType: "scenario",
+    consistencyGroup: "CG-TROUBLESHOOT-01",
+    riskFlag: "lowDigitalReadiness",
+    text: "إذا تعطل تطبيق تستخدمه، ما أول تشخيص رقمي منطقي؟",
+    options: [
+      { id: "A", text: "أفترض أن الجهاز خربان.", score: 0 },
+      { id: "B", text: "أفحص الاتصال، الحساب، الملف، ثم أجرب إعادة التشغيل أو التحديث.", score: 3 },
+      { id: "C", text: "أحذف التطبيق مباشرة.", score: 1 },
+      { id: "D", text: "أترك المهمة.", score: 0 }
+    ]
+  },
+  {
+    id: "DA-020",
+    mode: ["screening", "diagnostic"],
+    axis: "digitalAiBasics",
+    subAxis: "workflowAwareness",
+    questionType: "choice",
+    consistencyGroup: "CG-WORKFLOW-01",
+    riskFlag: "lowDigitalReadiness",
+    text: "ما معنى أن تكون المهارة الرقمية عملية لا نظرية فقط؟",
+    options: [
+      { id: "A", text: "أن أعرف أسماء البرامج.", score: 1 },
+      { id: "B", text: "أن أستخدم الأداة لإنتاج مخرج حقيقي يحل مشكلة أو ينظم عملًا.", score: 3 },
+      { id: "C", text: "أن أشاهد شروحات كثيرة.", score: 1 },
+      { id: "D", text: "أن أملك جهازًا حديثًا.", score: 0 }
+    ]
+  },
+
+  {
+    id: "AI-019",
+    mode: ["screening", "diagnostic"],
+    axis: "aiInteraction",
+    subAxis: "aiAsCoach",
+    questionType: "scenario",
+    consistencyGroup: "CG-AI-COACH-01",
+    riskFlag: "avoidingApplication",
+    text: "كيف تجعل AI مدربًا لا مجرد كاتب؟",
+    options: [
+      { id: "A", text: "أطلب منه الإجابة النهائية فقط.", score: 0 },
+      { id: "B", text: "أطلب منه شرحًا، ثم تمرينًا، ثم تصحيحًا، ثم مستوى أعلى.", score: 3 },
+      { id: "C", text: "أطلب منه نصًا طويلًا.", score: 1 },
+      { id: "D", text: "أطلب منه اختصار كل شيء.", score: 1 }
+    ]
+  },
+  {
+    id: "AI-020",
+    mode: ["screening", "diagnostic"],
+    axis: "aiInteraction",
+    subAxis: "aiBoundary",
+    questionType: "choice",
+    consistencyGroup: "CG-AI-BOUNDARY-01",
+    riskFlag: "aiOverReliance",
+    text: "ما الحد الصحيح لاستخدام AI في القرارات المهمة؟",
+    options: [
+      { id: "A", text: "يساعد في التحليل والبدائل، لكن القرار النهائي يحتاج تحققًا وحكمًا بشريًا.", score: 3 },
+      { id: "B", text: "يقرر بدل الإنسان لأنه أسرع.", score: 0 },
+      { id: "C", text: "لا يستخدم أبدًا في أي قرار.", score: 1 },
+      { id: "D", text: "يستخدم فقط إذا أعطى جوابًا قصيرًا.", score: 0 }
+    ]
+  },
+
+  {
+    id: "HC-025",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "responseStability",
+    questionType: "projection",
+    consistencyGroup: "CG-PRACTICE-01",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص يتدرب كثيرًا لكنه يكرر نفس الخطأ دون تغذية راجعة. ما تقييمك؟",
+    options: [
+      { id: "A", text: "تكراره كافٍ للإتقان.", score: 1 },
+      { id: "B", text: "يحتاج تدريبًا متعمدًا على نقطة ضعف مع تصحيح.", score: 3 },
+      { id: "C", text: "لا يناسبه المجال.", score: 0 },
+      { id: "D", text: "يحتاج وقتًا أطول فقط.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-026",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "judgmentAlignment",
+    questionType: "selfReport",
+    consistencyGroup: "CG-ENVIRONMENT-01",
+    riskFlag: "highConsistencyConflict",
+    text: "عندما تتشتت أثناء التعلم، ما الذي تفعله غالبًا؟",
+    options: [
+      { id: "A", text: "أعدّل البيئة وأقلل المشتتات.", score: 3 },
+      { id: "B", text: "ألوم ضعف الإرادة فقط.", score: 1 },
+      { id: "C", text: "أترك التعلم لذلك اليوم.", score: 0 },
+      { id: "D", text: "أفتح مصدرًا آخر للتغيير.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-027",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "responseStability",
+    questionType: "selfReport",
+    consistencyGroup: "CG-FAILURE-01",
+    riskFlag: "highConsistencyConflict",
+    text: "عندما تفشل في تطبيق مهارة جديدة، ما تفسيرك الأقرب؟",
+    options: [
+      { id: "A", text: "أحتاج معرفة ما الخطوة التي فشلت ولماذا.", score: 3 },
+      { id: "B", text: "ربما أنا لا أصلح لهذه المهارة.", score: 0 },
+      { id: "C", text: "المصدر لم يكن جيدًا غالبًا.", score: 1 },
+      { id: "D", text: "أحتاج حماسًا أكثر فقط.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-028",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "consistencyProbe",
+    questionType: "selfReport",
+    consistencyGroup: "CG-CONSISTENCY-01",
+    riskFlag: "highConsistencyConflict",
+    text: "أي نمط أقرب لطريقتك في الالتزام الطويل؟",
+    options: [
+      { id: "A", text: "دفعات قوية ثم انقطاع.", score: 0 },
+      { id: "B", text: "قليل منتظم مع مراجعة.", score: 3 },
+      { id: "C", text: "أنتظر الظروف المناسبة.", score: 0 },
+      { id: "D", text: "أبدأ بقوة ثم أبحث عن شيء جديد.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-029",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "judgmentAlignment",
+    questionType: "projection",
+    consistencyGroup: "CG-HELP-01",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص يطلب المساعدة دون أن يوضح ما جربه أو أين تعطل. ما تقييمك؟",
+    options: [
+      { id: "A", text: "طلبه ناقص ويحتاج تحديد المشكلة والمحاولة السابقة.", score: 3 },
+      { id: "B", text: "هذا أفضل من المحاولة.", score: 1 },
+      { id: "C", text: "يجب أن يعتمد على غيره.", score: 0 },
+      { id: "D", text: "لا يحتاج أن يشرح التفاصيل.", score: 0 }
+    ]
+  },
+  {
+    id: "HC-030",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "consistencyProbe",
+    questionType: "selfReport",
+    consistencyGroup: "CG-AI-BOUNDARY-01",
+    riskFlag: "highConsistencyConflict",
+    text: "عند قرار مهم، كيف تستخدم AI غالبًا؟",
+    options: [
+      { id: "A", text: "أجعله يختار بدلًا عني.", score: 0 },
+      { id: "B", text: "أستخدمه لعرض الخيارات والمخاطر ثم أتحقق وأقرر.", score: 3 },
+      { id: "C", text: "أستخدم أول إجابة مقنعة.", score: 0 },
+      { id: "D", text: "لا أستخدمه مطلقًا حتى في التحليل.", score: 1 }
+    ]
+  }
 ];
 
 if (typeof window !== "undefined") {
@@ -2342,6 +2829,7 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
 
