@@ -1,26 +1,26 @@
 ﻿const TEST_MODE_CONFIG = {
   screening: {
     label: "اختبار الفرز - نسخة تجريبية",
-    totalQuestions: 66,
+    totalQuestions: 96,
     quotas: {
       thinking: 16,
       analysis: 16,
-      selfDevelopment: 11,
-      digitalAiBasics: 6,
-      aiInteraction: 6,
-      hiddenConsistency: 11
+      selfDevelopment: 21,
+      digitalAiBasics: 11,
+      aiInteraction: 11,
+      hiddenConsistency: 21
     }
   },
   diagnostic: {
     label: "الاختبار التشخيصي - نسخة تجريبية",
-    totalQuestions: 66,
+    totalQuestions: 96,
     quotas: {
       thinking: 16,
       analysis: 16,
-      selfDevelopment: 11,
-      digitalAiBasics: 6,
-      aiInteraction: 6,
-      hiddenConsistency: 11
+      selfDevelopment: 21,
+      digitalAiBasics: 11,
+      aiInteraction: 11,
+      hiddenConsistency: 21
     }
   }
 };
@@ -1287,6 +1287,491 @@ const QUESTION_BANK = [
       { id: "D", text: "يكفي أن يعرضها على فريقه.", score: 1 }
     ]
   }
+
+,
+  {
+    id: "SD-012",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "habitDesign",
+    questionType: "scenario",
+    consistencyGroup: "CG-HABIT-01",
+    riskFlag: "avoidingApplication",
+    text: "إذا أردت بناء عادة تعلم يومية، ما البداية الأكثر واقعية؟",
+    options: [
+      { id: "A", text: "أبدأ بساعتين يوميًا حتى أشعر بالجدية.", score: 1 },
+      { id: "B", text: "أحدد وقتًا قصيرًا ثابتًا وسلوكًا واضحًا قابلًا للتكرار.", score: 3 },
+      { id: "C", text: "أنتظر حتى تتوفر الرغبة الكاملة.", score: 0 },
+      { id: "D", text: "أشتري دورة قوية ثم أبدأ لاحقًا.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-013",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "focusManagement",
+    questionType: "scenario",
+    consistencyGroup: "CG-FOCUS-01",
+    riskFlag: "avoidingApplication",
+    text: "أثناء التعلم تظهر لك مصادر كثيرة جذابة. ما التصرف الأقرب للنضج؟",
+    options: [
+      { id: "A", text: "أفتح أكثر من مصدر حتى لا أفوّت شيئًا.", score: 0 },
+      { id: "B", text: "أحفظ كل المصادر وأتنقل بينها حسب المزاج.", score: 1 },
+      { id: "C", text: "أختار مصدرًا رئيسيًا وأضع الباقي في قائمة لاحقة.", score: 3 },
+      { id: "D", text: "أترك المسار الحالي وأبدأ بالأحدث.", score: 0 }
+    ]
+  },
+  {
+    id: "SD-014",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "resilience",
+    questionType: "scenario",
+    consistencyGroup: "CG-RECOVERY-02",
+    riskFlag: "lowSelfAwareness",
+    text: "إذا حصلت على نتيجة ضعيفة في اختبار مهاري، ما التصرف الأقرب للنضج؟",
+    options: [
+      { id: "A", text: "أعتبرها دليلًا أن المجال لا يناسبني.", score: 0 },
+      { id: "B", text: "أبحث عن الأسئلة التي كشفت الفجوة وأعيد التدريب عليها.", score: 3 },
+      { id: "C", text: "أعيد الاختبار مباشرة حتى تتحسن الدرجة.", score: 1 },
+      { id: "D", text: "أقارن نتيجتي بنتائج الآخرين.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-015",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "goalClarity",
+    questionType: "selfAssessment",
+    consistencyGroup: "CG-GOAL-02",
+    riskFlag: "lowSelfAwareness",
+    text: "عندما يكون هدفك عامًا مثل أريد أن أتطور، ما أول تحسين لازم؟",
+    options: [
+      { id: "A", text: "أجعله هدفًا قابلًا للقياس بسلوك ومدة ومخرج واضح.", score: 3 },
+      { id: "B", text: "أكتبه بطريقة أجمل وأكثر تحفيزًا.", score: 1 },
+      { id: "C", text: "أنتظر حتى تتضح الرؤية مع الوقت.", score: 0 },
+      { id: "D", text: "أبدأ بأي دورة لها علاقة بالتطوير.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-016",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "energyManagement",
+    questionType: "scenario",
+    consistencyGroup: "CG-ENERGY-01",
+    riskFlag: "avoidingApplication",
+    text: "إذا كان وقتك متاحًا لكن طاقتك الذهنية منخفضة، ما الخيار الأفضل؟",
+    options: [
+      { id: "A", text: "أؤجل كل شيء حتى أكون في أفضل حالة.", score: 1 },
+      { id: "B", text: "أجبر نفسي على مهمة كبيرة.", score: 0 },
+      { id: "C", text: "أختار مهمة صغيرة منخفضة الجهد تحافظ على الاستمرارية.", score: 3 },
+      { id: "D", text: "أكتفي بمشاهدة محتوى دون تطبيق.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-017",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "accountability",
+    questionType: "scenario",
+    consistencyGroup: "CG-ACCOUNTABILITY-01",
+    riskFlag: "lowSelfAwareness",
+    text: "إذا لاحظت أنك لا تلتزم إلا عند وجود متابعة خارجية، ما القراءة الأقرب؟",
+    options: [
+      { id: "A", text: "هذا يعني أنني لا أملك انضباطًا نهائيًا.", score: 0 },
+      { id: "B", text: "أحتاج تصميم نظام مساءلة تدريجي حتى تنتقل المتابعة إلى عادة داخلية.", score: 3 },
+      { id: "C", text: "أحتاج شخصًا يراقبني دائمًا.", score: 1 },
+      { id: "D", text: "الأفضل ترك الأهداف التي تحتاج متابعة.", score: 0 }
+    ]
+  },
+  {
+    id: "SD-018",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "learningTransfer",
+    questionType: "scenario",
+    consistencyGroup: "CG-TRANSFER-01",
+    riskFlag: "avoidingApplication",
+    text: "بعد حضور دورة مفيدة، ما التصرف الذي يحول التعلم إلى مهارة؟",
+    options: [
+      { id: "A", text: "أحفظ المادة للرجوع لها لاحقًا.", score: 1 },
+      { id: "B", text: "أكتب ملخصًا طويلًا.", score: 1 },
+      { id: "C", text: "أحدد موقفًا حقيقيًا أطبق فيه فكرة واحدة خلال أسبوع.", score: 3 },
+      { id: "D", text: "أبحث عن دورة متقدمة مباشرة.", score: 0 }
+    ]
+  },
+  {
+    id: "SD-019",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "priorityDiscipline",
+    questionType: "pressure",
+    consistencyGroup: "CG-PRIORITY-02",
+    riskFlag: "lowSelfAwareness",
+    text: "لديك مهام كثيرة ومسار تعلم مهم. كيف تحمي وقت التعلم؟",
+    options: [
+      { id: "A", text: "أتعلم فقط إذا انتهت كل المهام الأخرى.", score: 0 },
+      { id: "B", text: "أضع وقتًا قصيرًا ثابتًا وأتعامل معه كموعد غير قابل للإلغاء إلا لضرورة.", score: 3 },
+      { id: "C", text: "أزيد مدة التعلم في نهاية الأسبوع فقط.", score: 1 },
+      { id: "D", text: "أتعلم عندما أشعر أنني متفرغ ذهنيًا.", score: 1 }
+    ]
+  },
+  {
+    id: "SD-020",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "selfEvaluation",
+    questionType: "selfAssessment",
+    consistencyGroup: "CG-SELF-EVAL-01",
+    riskFlag: "lowSelfAwareness",
+    text: "عند تقييم تقدمك، ما المعيار الأكثر دقة؟",
+    options: [
+      { id: "A", text: "عدد الساعات التي قضيتها.", score: 1 },
+      { id: "B", text: "شعوري بأنني تطورت.", score: 1 },
+      { id: "C", text: "عدد المقاطع أو الدروس التي أنهيتها.", score: 1 },
+      { id: "D", text: "قدرتي على تطبيق المهارة في موقف جديد مع خطأ أقل.", score: 3 }
+    ]
+  },
+  {
+    id: "SD-021",
+    mode: ["screening", "diagnostic"],
+    axis: "selfDevelopment",
+    subAxis: "reflection",
+    questionType: "scenario",
+    consistencyGroup: "CG-REFLECTION-01",
+    riskFlag: "lowSelfAwareness",
+    text: "ما أفضل سؤال في نهاية أسبوع تعلم؟",
+    options: [
+      { id: "A", text: "هل كنت متحمسًا؟", score: 1 },
+      { id: "B", text: "ما الذي تعلمته، ما الذي طبقته، وما الذي سأعدله الأسبوع القادم؟", score: 3 },
+      { id: "C", text: "كم ساعة قضيت؟", score: 1 },
+      { id: "D", text: "هل انتهيت من كل شيء؟", score: 1 }
+    ]
+  },
+
+  {
+    id: "DA-007",
+    mode: ["screening", "diagnostic"],
+    axis: "digitalAiBasics",
+    subAxis: "digitalFluency",
+    questionType: "scenario",
+    consistencyGroup: "CG-DIGITAL-02",
+    riskFlag: "lowDigitalReadiness",
+    text: "إذا لم تجد ملفًا في جهازك، ما أول تصرف رقمي صحيح؟",
+    options: [
+      { id: "A", text: "أعيد إنشاء الملف.", score: 0 },
+      { id: "B", text: "أبحث باسم الملف أو جزء منه أو نوعه داخل النظام.", score: 3 },
+      { id: "C", text: "أفتش يدويًا في كل المجلدات.", score: 1 },
+      { id: "D", text: "أطلب من شخص آخر البحث عنه.", score: 1 }
+    ]
+  },
+  {
+    id: "DA-008",
+    mode: ["screening", "diagnostic"],
+    axis: "digitalAiBasics",
+    subAxis: "toolSelection",
+    questionType: "choice",
+    consistencyGroup: "CG-TOOL-01",
+    riskFlag: "lowDigitalReadiness",
+    text: "لديك نص طويل وتريد استخراج النقاط الرئيسية ثم تحويلها إلى جدول. ما الدمج الأنسب؟",
+    options: [
+      { id: "A", text: "Word فقط.", score: 1 },
+      { id: "B", text: "AI لاستخراج النقاط ثم Excel أو جدول منظم للمخرجات.", score: 3 },
+      { id: "C", text: "PowerPoint مباشرة.", score: 1 },
+      { id: "D", text: "نسخ النص كما هو في ملف جديد.", score: 0 }
+    ]
+  },
+  {
+    id: "DA-009",
+    mode: ["screening", "diagnostic"],
+    axis: "digitalAiBasics",
+    subAxis: "dataLiteracy",
+    questionType: "scenario",
+    consistencyGroup: "CG-DATA-LIT-01",
+    riskFlag: "lowDigitalReadiness",
+    text: "عند رؤية نسبة مئوية في تقرير، ما السؤال الأول لفهمها؟",
+    options: [
+      { id: "A", text: "هل النسبة كبيرة أم صغيرة فقط؟", score: 1 },
+      { id: "B", text: "ما المقام أو العدد الذي بُنيت عليه النسبة؟", score: 3 },
+      { id: "C", text: "هل شكلها في الرسم جميل؟", score: 0 },
+      { id: "D", text: "هل تؤيد رأيي؟", score: 0 }
+    ]
+  },
+  {
+    id: "DA-010",
+    mode: ["screening", "diagnostic"],
+    axis: "digitalAiBasics",
+    subAxis: "aiConcepts",
+    questionType: "choice",
+    consistencyGroup: "CG-AI-BASIC-02",
+    riskFlag: "aiOverReliance",
+    text: "ما معنى هلوسة الذكاء الاصطناعي AI Hallucination؟",
+    options: [
+      { id: "A", text: "أن يعطي إجابة واثقة لكنها قد تكون مختلقة أو غير دقيقة.", score: 3 },
+      { id: "B", text: "أن يتوقف النظام عن العمل.", score: 0 },
+      { id: "C", text: "أن يرفض الإجابة.", score: 0 },
+      { id: "D", text: "أن يكتب بلغة غير مفهومة فقط.", score: 1 }
+    ]
+  },
+  {
+    id: "DA-011",
+    mode: ["screening", "diagnostic"],
+    axis: "digitalAiBasics",
+    subAxis: "securityAwareness",
+    questionType: "scenario",
+    consistencyGroup: "CG-SECURITY-01",
+    riskFlag: "lowDigitalReadiness",
+    text: "وصلك رابط يطلب تسجيل الدخول بحجة تحديث الحساب. ما التصرف الصحيح؟",
+    options: [
+      { id: "A", text: "أدخل بسرعة حتى لا يتوقف الحساب.", score: 0 },
+      { id: "B", text: "أفتح الرابط إذا كان التصميم رسميًا.", score: 1 },
+      { id: "C", text: "أتحقق من المرسل والرابط من مصدر رسمي قبل إدخال أي بيانات.", score: 3 },
+      { id: "D", text: "أرسله لزميل ليجربه أولًا.", score: 0 }
+    ]
+  },
+
+  {
+    id: "AI-007",
+    mode: ["screening", "diagnostic"],
+    axis: "aiInteraction",
+    subAxis: "prompting",
+    questionType: "choice",
+    consistencyGroup: "CG-PROMPT-02",
+    riskFlag: "aiOverReliance",
+    text: "أي عنصر يجعل الطلب من AI أكثر دقة؟",
+    options: [
+      { id: "A", text: "كلمة احترافي فقط.", score: 1 },
+      { id: "B", text: "السياق والهدف والجمهور والمخرج المطلوب والقيود.", score: 3 },
+      { id: "C", text: "زيادة عدد الكلمات دون تحديد.", score: 1 },
+      { id: "D", text: "طلب الإجابة بسرعة.", score: 0 }
+    ]
+  },
+  {
+    id: "AI-008",
+    mode: ["screening", "diagnostic"],
+    axis: "aiInteraction",
+    subAxis: "validation",
+    questionType: "scenario",
+    consistencyGroup: "CG-AI-VERIFY-01",
+    riskFlag: "aiOverReliance",
+    text: "إذا أعطاك AI إجابة في موضوع نظامي أو مالي حساس، ما التصرف الصحيح؟",
+    options: [
+      { id: "A", text: "أستخدمها إذا كانت منسقة.", score: 0 },
+      { id: "B", text: "أطلب منه التأكيد فقط.", score: 1 },
+      { id: "C", text: "أتحقق من مصدر رسمي أو مختص قبل الاعتماد.", score: 3 },
+      { id: "D", text: "أطلب منه جعلها مختصرة.", score: 0 }
+    ]
+  },
+  {
+    id: "AI-009",
+    mode: ["screening", "diagnostic"],
+    axis: "aiInteraction",
+    subAxis: "humanJudgment",
+    questionType: "scenario",
+    consistencyGroup: "CG-AI-JUDGMENT-01",
+    riskFlag: "aiOverReliance",
+    text: "ما العلامة التي تدل أنك تستخدم AI بدل التفكير لا لدعم التفكير؟",
+    options: [
+      { id: "A", text: "عندما أطلب منه أمثلة.", score: 1 },
+      { id: "B", text: "عندما أقبل مخرجاته دون فهم أو مراجعة.", score: 3 },
+      { id: "C", text: "عندما أطلب منه تبسيط مفهوم.", score: 1 },
+      { id: "D", text: "عندما أطلب منه طرح أسئلة.", score: 1 }
+    ]
+  },
+  {
+    id: "AI-010",
+    mode: ["screening", "diagnostic"],
+    axis: "aiInteraction",
+    subAxis: "iteration",
+    questionType: "scenario",
+    consistencyGroup: "CG-PROMPT-ITERATION-01",
+    riskFlag: "lowSelfAwareness",
+    text: "إذا كانت إجابة AI قريبة من المطلوب لكنها ناقصة، ما التصرف الأفضل؟",
+    options: [
+      { id: "A", text: "أعيد نفس السؤال.", score: 1 },
+      { id: "B", text: "أترك الأداة.", score: 0 },
+      { id: "C", text: "أحدد ما الناقص وأطلب تعديلًا بقيود أو مثال واضح.", score: 3 },
+      { id: "D", text: "أطلب إجابة أطول فقط.", score: 1 }
+    ]
+  },
+  {
+    id: "AI-011",
+    mode: ["screening", "diagnostic"],
+    axis: "aiInteraction",
+    subAxis: "roleDesign",
+    questionType: "choice",
+    consistencyGroup: "CG-AI-ROLE-01",
+    riskFlag: "aiOverReliance",
+    text: "عند استخدام AI للتعلم، أي دور تطلبه منه؟",
+    options: [
+      { id: "A", text: "كاتب إجابات جاهزة.", score: 0 },
+      { id: "B", text: "مدرب يشرح ثم يسأل ثم يصحح.", score: 3 },
+      { id: "C", text: "ملخص سريع فقط.", score: 1 },
+      { id: "D", text: "منفذ يقوم بكل شيء بدلًا عني.", score: 0 }
+    ]
+  },
+
+  {
+    id: "HC-012",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "responseStability",
+    questionType: "selfReport",
+    consistencyGroup: "CG-HABIT-01",
+    riskFlag: "highConsistencyConflict",
+    text: "ما الذي يجعلك تلتزم أكثر بعادة جديدة؟",
+    options: [
+      { id: "A", text: "بداية صغيرة واضحة ومكررة.", score: 3 },
+      { id: "B", text: "قرار قوي من البداية.", score: 1 },
+      { id: "C", text: "حماس عالٍ.", score: 1 },
+      { id: "D", text: "وقت طويل متاح.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-013",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "judgmentAlignment",
+    questionType: "projection",
+    consistencyGroup: "CG-FOCUS-01",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص يغير مصدر التعلم كل يوم لأنه وجد شيئًا أفضل. ما تقييمك؟",
+    options: [
+      { id: "A", text: "مرن ومطلع.", score: 1 },
+      { id: "B", text: "قد يكون مشتتًا ويخلط بين البحث والتقدم.", score: 3 },
+      { id: "C", text: "الأفضل أن يستمر في البحث حتى يجد الكامل.", score: 0 },
+      { id: "D", text: "هذا دليل شغف كافٍ.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-014",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "responseStability",
+    questionType: "selfReport",
+    consistencyGroup: "CG-ENERGY-01",
+    riskFlag: "highConsistencyConflict",
+    text: "عندما تكون طاقتك منخفضة، كيف تتعامل مع الالتزام؟",
+    options: [
+      { id: "A", text: "أوقف الالتزام حتى أستعيد الطاقة.", score: 1 },
+      { id: "B", text: "أختار نسخة مصغرة من المهمة حتى لا ينقطع المسار.", score: 3 },
+      { id: "C", text: "أضغط على نفسي بمهمة كبيرة.", score: 0 },
+      { id: "D", text: "أكتفي بالتخطيط دون تنفيذ.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-015",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "consistencyProbe",
+    questionType: "projection",
+    consistencyGroup: "CG-ACCOUNTABILITY-01",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص لا يلتزم إلا إذا كان هناك من يتابعه. ما التحليل الأقرب؟",
+    options: [
+      { id: "A", text: "فاشل في الانضباط.", score: 0 },
+      { id: "B", text: "يحتاج بناء نظام مساءلة يتحول تدريجيًا إلى عادة.", score: 3 },
+      { id: "C", text: "يحتاج مراقبة دائمة.", score: 1 },
+      { id: "D", text: "لا يصلح للتعلم الذاتي.", score: 0 }
+    ]
+  },
+  {
+    id: "HC-016",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "judgmentAlignment",
+    questionType: "projection",
+    consistencyGroup: "CG-TRANSFER-01",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص يحضر دورات كثيرة لكنه لا يربطها بأي موقف واقعي. ما المشكلة المحتملة؟",
+    options: [
+      { id: "A", text: "يتعلم نظريًا دون نقل التعلم إلى التطبيق.", score: 3 },
+      { id: "B", text: "يحتاج دورات أكثر تخصصًا فقط.", score: 1 },
+      { id: "C", text: "ليس لديه وقت كافٍ.", score: 1 },
+      { id: "D", text: "هذا طبيعي ولا يحتاج تغييرًا.", score: 0 }
+    ]
+  },
+  {
+    id: "HC-017",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "responseStability",
+    questionType: "pressure",
+    consistencyGroup: "CG-PRIORITY-02",
+    riskFlag: "highConsistencyConflict",
+    text: "إذا أصبح يومك مزدحمًا، ما أول شيء يحدث لمسار التعلم غالبًا؟",
+    options: [
+      { id: "A", text: "ألغيه كاملًا.", score: 0 },
+      { id: "B", text: "أحافظ على نسخة قصيرة منه.", score: 3 },
+      { id: "C", text: "أؤجله لنهاية الأسبوع.", score: 1 },
+      { id: "D", text: "أكتفي بالتفكير فيه دون تطبيق.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-018",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "judgmentAlignment",
+    questionType: "selfReport",
+    consistencyGroup: "CG-SELF-EVAL-01",
+    riskFlag: "highConsistencyConflict",
+    text: "كيف تعرف أنك أصبحت أفضل في مهارة معينة؟",
+    options: [
+      { id: "A", text: "إذا زادت ثقتي فقط.", score: 1 },
+      { id: "B", text: "إذا أنهيت محتوى أكثر.", score: 1 },
+      { id: "C", text: "إذا تحسن أدائي في تطبيق جديد وبأخطاء أقل.", score: 3 },
+      { id: "D", text: "إذا مدحني الآخرون.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-019",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "consistencyProbe",
+    questionType: "selfReport",
+    consistencyGroup: "CG-AI-VERIFY-01",
+    riskFlag: "highConsistencyConflict",
+    text: "ما مستوى ثقتك في إجابات AI عندما تكون مكتوبة بثقة؟",
+    options: [
+      { id: "A", text: "أثق بها غالبًا.", score: 0 },
+      { id: "B", text: "أثق بها حسب الموضوع وبعد التحقق عند الحاجة.", score: 3 },
+      { id: "C", text: "لا أثق بها إطلاقًا.", score: 1 },
+      { id: "D", text: "أثق بها إذا كانت طويلة ومفصلة.", score: 0 }
+    ]
+  },
+  {
+    id: "HC-020",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "responseStability",
+    questionType: "projection",
+    consistencyGroup: "CG-AI-JUDGMENT-01",
+    riskFlag: "highConsistencyConflict",
+    text: "شخص يستخدم AI لإعطاء إجابات جاهزة دون أن يفهمها. ما تقييمك؟",
+    options: [
+      { id: "A", text: "يستخدم الأداة بكفاءة.", score: 0 },
+      { id: "B", text: "يوفر الوقت وهذا يكفي.", score: 1 },
+      { id: "C", text: "يضعف حكمه الشخصي وقدرته على التعلم.", score: 3 },
+      { id: "D", text: "لا مشكلة إذا نجح في المهمة.", score: 1 }
+    ]
+  },
+  {
+    id: "HC-021",
+    mode: ["screening", "diagnostic"],
+    axis: "hiddenConsistency",
+    subAxis: "consistencyProbe",
+    questionType: "selfReport",
+    consistencyGroup: "CG-REFLECTION-01",
+    riskFlag: "highConsistencyConflict",
+    text: "في نهاية الأسبوع، ما الذي تراجعه فعليًا غالبًا؟",
+    options: [
+      { id: "A", text: "ما أنجزت وما تعطل وما سأعدله.", score: 3 },
+      { id: "B", text: "هل كنت مشغولًا أم لا.", score: 1 },
+      { id: "C", text: "كم شعرت بالحماس.", score: 1 },
+      { id: "D", text: "لا أراجع غالبًا.", score: 0 }
+    ]
+  }
 ];
 
 if (typeof window !== "undefined") {
@@ -1306,5 +1791,6 @@ if (typeof module !== "undefined") {
     QUESTION_BANK
   };
 }
+
 
 
