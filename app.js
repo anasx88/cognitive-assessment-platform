@@ -1,4 +1,4 @@
-(function attachApp(root) {
+﻿(function attachApp(root) {
   const state = {
     participant: null,
     testType: "screening",
@@ -166,6 +166,61 @@
     return "";
   }
 
+
+  function getBestAnswerText(question) {
+    const maxScore = Math.max(...question.options.map((option) => option.score));
+    return question.options
+      .filter((option) => option.score === maxScore)
+      .map((option) => `${option.id}: ${option.text}`)
+      .join(" | ");
+  }
+
+  function buildAnswerReviewData(questions, answers) {
+    const reviewRows = questions.map((question) => {
+      const selected = answers[question.id];
+      const selectedOption = question.options.find((option) => option.id === selected?.optionId);
+      const selectedScore = selectedOption ? selectedOption.score : null;
+      const riskTriggered = Boolean(question.riskFlag && selectedScore !== null && selectedScore <= 1);
+      const borderline = Boolean(selectedScore === 2);
+
+      let reviewerDecision = "لا تحتاج مراجعة";
+      if (riskTriggered) {
+        reviewerDecision = "مؤثرة: إجابة منخفضة فعّلت مؤشر مخاطرة";
+      } else if (borderline) {
+        reviewerDecision = "مراجعة خفيفة: إجابة جزئية أو تفسير منفرد";
+      }
+
+      return {
+        questionId: question.id,
+        axis: question.axis,
+        subAxis: question.subAxis || "",
+        questionType: question.questionType || "",
+        riskFlag: question.riskFlag || "",
+        questionText: question.text,
+        selectedOptionId: selectedOption ? selectedOption.id : "",
+        selectedAnswer: selectedOption ? selectedOption.text : "",
+        selectedScore,
+        bestAnswer: getBestAnswerText(question),
+        riskTriggered,
+        borderline,
+        reviewerDecision
+      };
+    });
+
+    const triggeredRiskAnswers = reviewRows.filter((row) => row.riskTriggered);
+    const borderlineReviewAnswers = reviewRows.filter((row) => row.borderline);
+
+    return {
+      answerReviewSummary: {
+        totalQuestions: questions.length,
+        triggeredRiskCount: triggeredRiskAnswers.length,
+        borderlineReviewCount: borderlineReviewAnswers.length,
+        summaryText: `مخاطر مؤثرة: ${triggeredRiskAnswers.length} | إجابات تحتاج مراجعة خفيفة: ${borderlineReviewAnswers.length}`
+      },
+      triggeredRiskAnswers,
+      borderlineReviewAnswers
+    };
+  }
   async function finishAssessment() {
     if (!isComplete()) {
       dom.missingNotice.hidden = false;
@@ -208,23 +263,33 @@
       recommendation
     });
 
+    const answerReviewData = buildAnswerReviewData(state.questions, state.answers);
+    payload.answerReviewSummary = answerReviewData.answerReviewSummary;
+    payload.triggeredRiskAnswers = answerReviewData.triggeredRiskAnswers;
+    payload.borderlineReviewAnswers = answerReviewData.borderlineReviewAnswers;
+    payload.answerReviewSummaryText = answerReviewData.answerReviewSummary.summaryText;
+    payload.triggeredRiskAnswersJson = JSON.stringify(answerReviewData.triggeredRiskAnswers);
+    payload.borderlineReviewAnswersJson = JSON.stringify(answerReviewData.borderlineReviewAnswers);
+
     state.finalPayload = payload;
     dom.reportContainer.innerHTML = root.Report.generateReportHtml(result);
     dom.cloudWarning.hidden = true;
     dom.cloudSuccess.hidden = true;
 
-    try {
-      await root.AssessmentStorage.submitResult(payload);
-      dom.cloudSuccess.hidden = false;
-    } catch (error) {
-      dom.cloudWarning.textContent =
-        "تم إنشاء التقرير محليا، لكن تعذر الحفظ السحابي. يمكنك تنزيل نسخة JSON احتياطية.";
-      dom.cloudWarning.hidden = false;
-    }
-
     root.AssessmentStorage.clearProgress();
     setScreen("report");
     dom.finishButton.textContent = "إنهاء الاختبار";
+
+    root.AssessmentStorage.submitResult(payload)
+      .then(() => {
+        dom.cloudSuccess.hidden = false;
+      })
+      .catch((error) => {
+        dom.cloudWarning.textContent =
+          "تم إنشاء التقرير محليا، لكن تعذر الحفظ السحابي. يمكنك تنزيل نسخة JSON احتياطية.";
+        dom.cloudWarning.hidden = false;
+        console.error("Cloud save failed:", error);
+      });
   }
 
   function bindEvents() {
@@ -333,3 +398,7 @@
 
   document.addEventListener("DOMContentLoaded", init);
 })(window);
+
+
+
+
