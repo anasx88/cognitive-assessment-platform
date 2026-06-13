@@ -1,5 +1,5 @@
 ﻿const CONFIG = {
-  GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwlbW48GtpU9aa9kfz3FS1G85v5C-ZDLbo-lz5i9I74_y8h0xERiwGOvuXVIvsxfmB9MA/exec",
+  GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyGwARUsKcUM4ZzyAI9uQHDtDXSgie_OB3PYb4-rqshKC9tvUHdrG7JOs3-8UQx2A5d/exec",
   ACCESS_KEY: "CAI_2026_PRIVATE_KEY"
 };
 
